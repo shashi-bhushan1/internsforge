@@ -3,39 +3,39 @@ import Image from 'next/image';
 
 export default function ProgramsUnique() {
   return (
-    <section className="bg-white py-16 pl-[145px] pr-[145px]">
+    <section className="bg-white py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center m-0 border-0 p-5">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center m-0 border-0 p-3 md:p-5">
           {/* Left Section - Text Content */}
-          <div className="space-y-6 ml-6">
-            <p className="text-[16px] font-bold text-gray-600 uppercase tracking-wide">
+          <div className="space-y-4 md:space-y-6 ml-0 md:ml-6">
+            <p className="text-sm sm:text-base md:text-[16px] font-bold text-gray-600 uppercase tracking-wide">
               ONLINE LEARNING DONE BETTER
             </p>
             
-            <h2 className="text-[42px] font-bold text-black leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-black leading-tight">
               Discover what makes<br />
               our programs unique
             </h2>
             
-            <p className="text-[13px] text-gray-700 leading-6">
+            <p className="text-xs sm:text-sm md:text-[13px] text-gray-700 leading-5 md:leading-6">
               InternsForge Learning programs are crafted for busy professionals, featuring top university professors, industry mentors, and real hands-on projects. Our approach ensures you gain practical skills from the best in the field, making our programs the ideal choice for those looking to advance their careers and master new skills effectively.
             </p>
             
-            <div className="flex gap-4 pt-4">
-              <button className="px-6 py-3 bg-gray-200 text-black font-medium rounded-full hover:bg-gray-300 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+              <button className="px-5 md:px-6 py-2.5 md:py-3 bg-gray-200 text-black font-medium rounded-full hover:bg-gray-300 transition-colors text-sm md:text-base">
                 Explore More
               </button>
-              <button className="px-6 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors">
+              <button className="px-5 md:px-6 py-2.5 md:py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors text-sm md:text-base">
                 Subscribe Now
               </button>
             </div>
           </div>
 
           {/* Right Section - Circular Image */}
-          <div className="flex justify-center lg:justify-start mr-1">
-            <div className="relative w-[350px] h-[350px]">
-              <div className="absolute inset-0 rounded-full border-[20px] border-orange-500"></div>
-              <div className="absolute inset-[20px] rounded-full bg-gray-200 overflow-hidden">
+          <div className="flex justify-center lg:justify-start mr-0 md:mr-1 mt-6 lg:mt-0">
+            <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px]">
+              <div className="absolute inset-0 rounded-full border-[15px] md:border-[20px] border-orange-500"></div>
+              <div className="absolute inset-[15px] md:inset-[20px] rounded-full bg-gray-200 overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
                   alt="Professional student with tablet"

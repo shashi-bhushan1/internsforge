@@ -32,7 +32,7 @@ const comboPacks = [
   {
     badge: "MBA LITE",
     title: "MBA Lite- Mini MBA",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
     features: [
       "+ Over 5 Business Domains",
       "+ Dive into Live Business Wisdom",
@@ -48,43 +48,44 @@ const comboPacks = [
 
 export default function ComboPacks() {
   return (
-    <section className="bg-white py-16 pl-[145px] pr-[145px]">
+    <section className="bg-white py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-[42px] font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900 mb-3 md:mb-4">
             InternsForge Combo Packs
           </h1>
-          <p className="text-base text-gray-700 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-700 max-w-3xl mx-auto px-4">
             Discover InternsForge Combo Packs, curated with top-quality courses and resources to provide comprehensive learning and great value.
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 justify-items-center">
           {comboPacks.map((pack, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow m-0 border-0 p-5 w-[379px] h-[450px] flex flex-col">
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow m-0 border-0 p-4 md:p-5 w-full max-w-[379px] min-h-[450px] md:h-[450px] flex flex-col">
               {/* Top Section: Image and Title */}
-              <div className="flex gap-4 mb-4">
+              <div className="flex gap-3 md:gap-4 mb-2 md:mb-3">
                 {/* Image with Badge */}
                 <div className="relative flex-shrink-0">
-                  <div className="absolute top-1 left-1 z-10 bg-gray-900 text-white px-2 py-0.5 rounded text-[10px] font-semibold uppercase">
+                  <div className="absolute top-1 left-1 z-10 bg-gray-900 text-white px-1.5 md:px-2 py-0.5 rounded text-[8px] md:text-[10px] font-semibold uppercase">
                     {pack.badge}
                   </div>
-                  <div className="w-[83px] h-[80px] relative rounded-lg overflow-hidden">
+                  <div className="w-[70px] h-[68px] md:w-[83px] md:h-[80px] relative rounded-lg overflow-hidden bg-gray-100">
                     <Image
                       src={pack.image}
                       alt={pack.title}
                       width={83}
                       height={80}
                       className="object-cover w-full h-full"
+                      unoptimized
                     />
                   </div>
                 </div>
 
                 {/* Title */}
                 <div className="flex-1 flex items-start">
-                  <h2 className="text-[24px] font-bold text-gray-900 leading-tight">
+                  <h2 className="text-lg sm:text-xl md:text-[24px] font-bold text-gray-900 leading-tight">
                     {pack.title === "Tech Pack-Tech Beginner" ? (
                       <>
                         Tech Pack-Tech<br />
@@ -104,12 +105,12 @@ export default function ComboPacks() {
 
               {/* Features Section */}
               <div className={`${index === 2 ? 'mb-1' : 'mb-2'} flex-1`}>
-                <h4 className="text-base font-bold text-gray-900 mb-2">
+                <h4 className="text-sm sm:text-base font-bold text-gray-900 mb-2">
                   Includes Below Features
                 </h4>
                 <ul className="space-y-1">
                   {pack.features.map((feature, idx) => (
-                    <li key={idx} className="text-sm text-gray-700">
+                    <li key={idx} className="text-xs sm:text-sm text-gray-700">
                       {feature}
                     </li>
                   ))}
@@ -118,16 +119,16 @@ export default function ComboPacks() {
 
               {/* Pricing */}
               <div className={`${index === 2 ? 'mb-3' : 'mb-3'} text-center`}>
-                <span className="text-red-600 line-through text-[28px] mr-2">
+                <span className="text-red-600 line-through text-xl sm:text-2xl md:text-[28px] mr-2">
                   {pack.originalPrice}
                 </span>
-                <span className="text-[36px] font-bold text-gray-900">
+                <span className="text-2xl sm:text-3xl md:text-[36px] font-bold text-gray-900">
                   {pack.discountedPrice}
                 </span>
               </div>
 
               {/* CTA Button */}
-              <button className="w-full bg-gray-200 text-gray-900 font-medium py-3 rounded-full hover:bg-gray-300 transition-colors">
+              <button className="w-full bg-gray-200 text-gray-900 font-medium py-2.5 md:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm md:text-base">
                 Know More
               </button>
             </div>
