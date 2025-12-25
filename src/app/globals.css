@@ -43,11 +43,11 @@ body {
 }
 
 .animate-scroll-right-to-left {
-  animation: scroll-right-to-left 15s linear infinite;
+  animation: scroll-right-to-left 8s linear infinite;
 }
 
 .animate-scroll-left-to-right {
-  animation: scroll-left-to-right 15s linear infinite;
+  animation: scroll-left-to-right 8s linear infinite;
 }
 
 .scrollbar-hide {

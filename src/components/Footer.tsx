@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const techCourses = [
   "Digital Marketing Associate",
@@ -172,6 +173,10 @@ export default function Footer() {
                         <Link href="/about" className="text-sm text-gray-300 hover:text-white transition-colors">
                           {link}
                         </Link>
+                      ) : link === "Contact Us" ? (
+                        <Link href="/contact" className="text-sm text-gray-300 hover:text-white transition-colors">
+                          {link}
+                        </Link>
                       ) : (
                         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
                           {link}
@@ -198,35 +203,74 @@ export default function Footer() {
             </div>
             
             {/* Payment Information */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-              <p className="text-[19.5px] text-white italic">100% Safe and Secure Payments with</p>
-              <div className="flex gap-3 items-center">
+            <div className="flex flex-col items-center justify-center gap-4">
+              <p className="text-[19.5px] text-white italic whitespace-nowrap">100% Safe and Secure Payments with</p>
+              <div className="flex flex-wrap gap-3 items-center justify-center">
                 {/* Razorpay Logo */}
-                <div className="bg-white px-4 py-2.5 rounded-lg flex items-center gap-2">
-                  <span className="text-blue-600 font-bold text-lg">R</span>
-                  <span className="text-blue-600 font-bold text-sm">Razorpay</span>
+                <div className="bg-white px-4 py-3 rounded-lg flex items-center justify-center h-14 min-w-[130px]">
+                  <Image
+                    src="/footer/razorpay.svg"
+                    alt="Razorpay"
+                    width={120}
+                    height={40}
+                    className="h-8 w-auto object-contain"
+                    unoptimized
+                  />
                 </div>
-                {/* Cashfree Payments Logo */}
-                <div className="bg-white px-4 py-2.5 rounded-lg flex items-center gap-2">
-                  <div className="flex items-center">
-                    <span className="text-green-500 font-bold text-lg">F</span>
-                    <span className="text-yellow-500 font-bold text-lg">F</span>
-                  </div>
-                  <span className="text-gray-900 font-semibold text-xs">Cashfree Payments</span>
+                {/* PayU Logo */}
+                <div className="bg-white px-5 py-3.5 rounded-lg flex items-center justify-center h-16 min-w-[140px]">
+                  <Image
+                    src="/footer/payu.svg"
+                    alt="PayU"
+                    width={130}
+                    height={50}
+                    className="h-10 w-auto object-contain"
+                    unoptimized
+                  />
                 </div>
                 {/* UPI Logo */}
-                <div className="bg-white px-4 py-2.5 rounded-lg flex flex-col items-center">
-                  <div className="flex items-center gap-1">
-                    <span className="text-gray-700 font-bold text-sm">UP</span>
-                    <span className="text-gray-700 font-bold text-sm relative">
-                      I
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="absolute -right-1 top-0">
-                        <path d="M2 8L6 12L14 4" stroke="#FF6B00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M2 8L6 12L14 4" stroke="#00A651" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
-                      </svg>
-                    </span>
-                  </div>
-                  <span className="text-gray-600 text-[8px] mt-0.5 text-center">UNIFIED PAYMENTS INTERFACE</span>
+                <div className="bg-white px-4 py-3 rounded-lg flex items-center justify-center h-14 min-w-[110px]">
+                  <Image
+                    src="/footer/Unified_Payments_Interface-Logo.wine.png"
+                    alt="UPI - Unified Payments Interface"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain"
+                    unoptimized
+                  />
+                </div>
+                {/* RuPay Logo */}
+                <div className="bg-white px-4 py-3 rounded-lg flex items-center justify-center h-14 min-w-[110px]">
+                  <Image
+                    src="/footer/RuPay.svg.png"
+                    alt="RuPay"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain"
+                    unoptimized
+                  />
+                </div>
+                {/* Visa Logo */}
+                <div className="bg-white px-4 py-3 rounded-lg flex items-center justify-center h-14 min-w-[110px]">
+                  <Image
+                    src="/footer/Visa-Logo-2006.png"
+                    alt="Visa"
+                    width={100}
+                    height={40}
+                    className="h-8 w-auto object-contain"
+                    unoptimized
+                  />
+                </div>
+                {/* Instamojo Logo */}
+                <div className="bg-white px-5 py-3.5 rounded-lg flex items-center justify-center h-16 min-w-[150px]">
+                  <Image
+                    src="/footer/instamojo_new.png"
+                    alt="Instamojo"
+                    width={140}
+                    height={50}
+                    className="h-10 w-auto object-contain"
+                    unoptimized
+                  />
                 </div>
               </div>
             </div>

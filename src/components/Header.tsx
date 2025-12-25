@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 // SVG Icons
@@ -65,16 +66,31 @@ const GraduationCapIcon = () => (
 
 export default function Header() {
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
-  const isAboutPage = pathname === '/about';
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isHomePage = mounted && pathname === '/';
+  const isAboutPage = mounted && pathname === '/about';
+  const isContactPage = mounted && pathname === '/contact';
 
   return (
-    <header className="bg-white w-full h-auto md:h-[100px] sticky top-0 z-50 flex items-center px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] py-3 md:py-0">
+    <header className="bg-white w-full h-auto md:h-[120px] sticky top-0 z-50 flex items-center px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] py-4 md:py-0">
       <div className="max-w-[1600px] w-full flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
         {/* Logo Section */}
         <div className="flex items-center justify-between w-full md:w-auto flex-shrink-0">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
-            <h1 className="text-base md:text-lg font-bold text-gray-900 leading-tight cursor-pointer">InternsForge</h1>
+          <Link href="/" className="hover:opacity-80 transition-opacity -ml-2 md:-ml-4">
+            <Image
+              src="/internsforge_logo.png"
+              alt="InternsForge"
+              width={280}
+              height={100}
+              className="h-14 md:h-20 w-auto object-contain"
+              priority
+              unoptimized
+            />
           </Link>
           
           {/* Mobile: Hamburger Menu and Icon Buttons */}
@@ -87,10 +103,6 @@ export default function Header() {
                 <path d="M20 5C15 5 10 7.5 10 12.5C10 15 11.5 17.5 13 18.75C11.5 20 10 22.5 10 25C10 30 15 32.5 20 32.5C25 32.5 30 30 30 25C30 22.5 28.5 20 27 18.75C28.5 17.5 30 15 30 12.5C30 7.5 25 5 20 5Z" fill="white"/>
               </svg>
             </button>
-            <button className="relative w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center">
-              <MedicalCrossIcon />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[8px] px-1 py-0.5 rounded-full font-bold leading-none">New</span>
-            </button>
             <button className="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center">
               <GraduationCapIcon />
             </button>
@@ -98,26 +110,27 @@ export default function Header() {
         </div>
 
         {/* Program Buttons - Desktop Only */}
-        <div className="hidden md:flex items-center gap-1.5 md:gap-2 flex-shrink-0 md:ml-4 flex-wrap">
-          <button className="flex items-center gap-1 md:gap-1.5 px-2 md:px-4 py-1.5 md:py-2 rounded-full bg-blue-500 text-white text-[10px] md:text-[12.8px] font-medium hover:bg-blue-600 transition-colors">
+        <div className="hidden md:flex items-center gap-1.5 md:gap-2 flex-shrink-0 md:ml-10 flex-wrap">
+          <button 
+            className="flex items-center gap-1 md:gap-1.5 px-2 md:px-4 py-1.5 md:py-2 rounded-full bg-blue-500 text-white text-[10px] md:text-[12.8px] font-medium transition-colors"
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#ff6900'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#3b82f6'}
+          >
             <HamburgerIcon />
             <span className="hidden sm:inline">All Programs</span>
           </button>
           
-          <button className="flex items-center gap-1 md:gap-1.5 px-2 md:px-4 py-1.5 md:py-2 rounded-full bg-gray-700 text-white text-[10px] md:text-[12.8px] font-medium hover:bg-gray-800 transition-colors">
+          <button 
+            className="flex items-center gap-1 md:gap-1.5 px-2 md:px-4 py-1.5 md:py-2 rounded-full bg-gray-700 text-white text-[10px] md:text-[12.8px] font-medium transition-colors"
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#ff6900'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#374151'}
+          >
             <svg width="16" height="16" className="md:w-[18px] md:h-[18px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 3C7 3 4 5 4 9C4 11 5 13 6 14C5 15 4 17 4 19H6C6 17 7 16 8 16C9 16 10 17 10 19H12C12 17 13 16 14 16C15 16 16 17 16 19H18C18 17 17 15 16 14C17 13 18 11 18 9C18 5 15 3 12 3C11 3 10 3 10 3Z" fill="white"/>
             </svg>
             <span className="hidden sm:inline">Advanced</span>
           </button>
           
-          <button className="relative flex items-center gap-1 md:gap-1.5 px-2 md:px-4 py-1.5 md:py-2 rounded-full bg-teal-500 text-white text-[10px] md:text-[12.8px] font-medium hover:bg-teal-600 transition-colors">
-            <MedicalCrossIcon />
-            <span className="hidden sm:inline">Medical Coding</span>
-            <span className="absolute -top-1 -right-1 md:-top-1.5 md:-right-1.5 bg-red-500 text-white text-[8px] md:text-[10px] px-1 md:px-1.5 py-0.5 rounded-full font-bold leading-none whitespace-nowrap">
-              New
-            </span>
-          </button>
         </div>
 
         {/* Navigation Links */}
@@ -139,14 +152,15 @@ export default function Header() {
             <span className="font-medium text-[12.8px]">Careers</span>
           </a>
           
-          <a href="#" className="flex items-center gap-1.5 xl:gap-2 text-gray-700 hover:text-gray-900 transition-colors">
+          <Link href="/contact" className={`relative flex items-center gap-1.5 xl:gap-2 transition-colors pb-1 ${isContactPage ? 'text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}>
             <EnvelopeIcon />
             <span className="font-medium text-[12.8px]">Contact</span>
-          </a>
+            {isContactPage && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-500"></div>}
+          </Link>
         </nav>
 
         {/* Enroll Now Button */}
-        <button className="flex items-center gap-1.5 md:gap-2 px-4 md:px-6 py-2 md:py-2.5 rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 text-white text-[11px] md:text-[12.8px] font-semibold hover:from-purple-600 hover:via-purple-700 hover:to-pink-600 transition-all shadow-md flex-shrink-0 md:ml-4 w-full md:w-auto justify-center">
+        <button className="flex items-center gap-1.5 md:gap-2 px-4 md:px-6 py-2 md:py-2.5 rounded-full text-white text-[11px] md:text-[12.8px] font-semibold hover:opacity-90 transition-all shadow-md flex-shrink-0 md:ml-8 w-full md:w-auto justify-center" style={{ backgroundColor: '#ff6900' }}>
           <GraduationCapIcon />
           <span>Enroll Now</span>
         </button>
