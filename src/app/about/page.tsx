@@ -42,7 +42,7 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-brand-page">
       <Header />
       <main className="w-full">
         <AboutHero />

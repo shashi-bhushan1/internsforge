@@ -54,7 +54,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1C0905] text-white">
+    <footer className="bg-brand-navy text-white">
       <div className="px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] py-8 md:py-12">
         <div className="max-w-[1600px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-8">
@@ -68,12 +68,12 @@ export default function Footer() {
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-4 py-2 bg-white text-gray-900 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="flex-1 px-4 py-2 bg-white text-gray-900 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-orange"
                     required
                   />
                   <button
                     type="submit"
-                    className="px-6 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700 transition-colors font-medium whitespace-nowrap"
+                    className="px-6 py-2 bg-brand-orange text-white rounded-full hover:bg-brand-cyan transition-colors font-medium whitespace-nowrap"
                   >
                     Subscribe
                   </button>
@@ -93,16 +93,16 @@ export default function Footer() {
               <div>
                 <h4 className="font-semibold mb-3">Find Us on Social</h4>
                 <div className="flex gap-3 mb-4">
-                  <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+                  <a href="#" className="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center hover:bg-brand-cyan transition-colors">
                     <span className="text-white font-bold">f</span>
                   </a>
-                  <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+                  <a href="#" className="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center hover:bg-brand-cyan transition-colors">
                     <span className="text-white font-bold text-xs">in</span>
                   </a>
-                  <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+                  <a href="#" className="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center hover:bg-brand-cyan transition-colors">
                     <span className="text-white font-bold">X</span>
                   </a>
-                  <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+                  <a href="#" className="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center hover:bg-brand-cyan transition-colors">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                       <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" strokeWidth="1" fill="none"/>
                       <circle cx="12" cy="12" r="3" fill="white"/>
@@ -118,7 +118,7 @@ export default function Footer() {
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                     <polyline points="22,6 12,13 2,6"/>
                   </svg>
-                  <a href="mailto:support@internsforge.com" className="text-sm text-gray-300 hover:text-white">
+                  <a href="mailto:support@internsforge.com" className="text-sm text-gray-300 hover:text-brand-cyan">
                     support@internsforge.com
                   </a>
                 </div>
@@ -126,7 +126,7 @@ export default function Footer() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                   </svg>
-                  <a href="tel:+919108126243" className="text-sm text-gray-300 hover:text-white">
+                  <a href="tel:+919108126243" className="text-sm text-gray-300 hover:text-brand-cyan">
                     +91 9108126243
                   </a>
                 </div>
@@ -141,7 +141,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   {techCourses.map((course, index) => (
                     <li key={index}>
-                      <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+                      <a href="#" className="text-sm text-gray-300 hover:text-brand-cyan transition-colors">
                         {course}
                       </a>
                     </li>
@@ -155,7 +155,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   {nonTechCourses.map((course, index) => (
                     <li key={index}>
-                      <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+                      <a href="#" className="text-sm text-gray-300 hover:text-brand-cyan transition-colors">
                         {course}
                       </a>
                     </li>
@@ -170,15 +170,15 @@ export default function Footer() {
                   {usefulLinks.map((link, index) => (
                     <li key={index}>
                       {link === "About Us" ? (
-                        <Link href="/about" className="text-sm text-gray-300 hover:text-white transition-colors">
+                        <Link href="/about" className="text-sm text-gray-300 hover:text-brand-cyan transition-colors">
                           {link}
                         </Link>
                       ) : link === "Contact Us" ? (
-                        <Link href="/contact" className="text-sm text-gray-300 hover:text-white transition-colors">
+                        <Link href="/contact" className="text-sm text-gray-300 hover:text-brand-cyan transition-colors">
                           {link}
                         </Link>
                       ) : (
-                        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
+                        <a href="#" className="text-sm text-gray-300 hover:text-brand-cyan transition-colors">
                           {link}
                         </a>
                       )}
@@ -192,11 +192,11 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar: Copyright and Payment Information */}
-      <div className="bg-[#1C0905] py-6">
+      <div className="bg-brand-navy py-6">
         <div className="px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
           <div className="max-w-[1600px] mx-auto">
             {/* Copyright Bar - Dark Gray with Rounded Corners */}
-            <div className="bg-gray-700 rounded-lg px-6 py-4 mb-4">
+            <div className="bg-brand-blue rounded-lg px-6 py-4 mb-4">
               <p className="text-sm text-white text-center">
                 © 2025 InternsForge Edutech LLP. All rights reserved - v1.16.3
               </p>

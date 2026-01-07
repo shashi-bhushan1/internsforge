@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function ProgramsUnique() {
   return (
-    <section className="bg-white py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
+    <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center m-0 border-0 p-3 md:p-5">
           {/* Left Section - Text Content */}
@@ -22,10 +22,10 @@ export default function ProgramsUnique() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
-              <button className="px-5 md:px-6 py-2.5 md:py-3 bg-gray-200 text-black font-medium rounded-full hover:bg-gray-300 transition-colors text-sm md:text-base">
+              <button className="px-6 md:px-8 py-3 md:py-3.5 bg-brand-orange text-white font-semibold rounded-full hover:bg-brand-cyan transition-colors text-sm md:text-base shadow-sm">
                 Explore More
               </button>
-              <button className="px-5 md:px-6 py-2.5 md:py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-800 transition-colors text-sm md:text-base">
+              <button className="px-6 md:px-8 py-3 md:py-3.5 bg-brand-orange text-white font-semibold rounded-full hover:bg-brand-cyan transition-colors text-sm md:text-base shadow-sm">
                 Subscribe Now
               </button>
             </div>
@@ -34,7 +34,7 @@ export default function ProgramsUnique() {
           {/* Right Section - Circular Image */}
           <div className="flex justify-center lg:justify-start mr-0 md:mr-1 mt-6 lg:mt-0">
             <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px]">
-              <div className="absolute inset-0 rounded-full border-[15px] md:border-[20px] border-orange-500"></div>
+              <div className="absolute inset-0 rounded-full border-15 md:border-20 border-brand-orange"></div>
               <div className="absolute inset-[15px] md:inset-[20px] rounded-full bg-gray-200 overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"

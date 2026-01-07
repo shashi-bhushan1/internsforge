@@ -101,7 +101,7 @@ const otherPartners = [
 
 export default function CertificationPartners() {
   return (
-    <section className="bg-white py-8 md:py-12 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
+    <section className="bg-brand-page py-8 md:py-12 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
         <div className="text-center mb-6 md:mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-black mb-3">

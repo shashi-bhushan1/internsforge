@@ -139,7 +139,7 @@ const educationalPartners = [
 
 export default function EducationalAlliances() {
   return (
-    <section className="bg-white py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] relative">
+    <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] relative">
       <div className="max-w-[1600px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">

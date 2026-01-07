@@ -48,7 +48,7 @@ const comboPacks = [
 
 export default function ComboPacks() {
   return (
-    <section className="bg-white py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
+    <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
@@ -67,7 +67,7 @@ export default function ComboPacks() {
               {/* Top Section: Image and Title */}
               <div className="flex gap-3 md:gap-4 mb-2 md:mb-3">
                 {/* Image with Badge */}
-                <div className="relative flex-shrink-0">
+                <div className="relative shrink-0">
                   <div className="absolute top-1 left-1 z-10 bg-gray-900 text-white px-1.5 md:px-2 py-0.5 rounded text-[8px] md:text-[10px] font-semibold uppercase">
                     {pack.badge}
                   </div>
@@ -128,7 +128,7 @@ export default function ComboPacks() {
               </div>
 
               {/* CTA Button */}
-              <button className="w-full bg-gray-200 text-gray-900 font-medium py-2.5 md:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm md:text-base">
+              <button className="w-full bg-brand-orange text-white font-semibold py-3 md:py-3.5 rounded-full hover:bg-brand-cyan transition-colors text-sm md:text-base shadow-sm">
                 Know More
               </button>
             </div>

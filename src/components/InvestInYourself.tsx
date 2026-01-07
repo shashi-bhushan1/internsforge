@@ -21,11 +21,11 @@ const statistics = [
 
 export default function InvestInYourself() {
   return (
-    <section className="bg-white py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
+    <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
         <div className="text-center">
           {/* Slogan */}
-          <p className="text-[16px] font-medium mb-3 md:mb-4" style={{ color: '#0F4089' }}>
+          <p className="text-[16px] font-medium mb-3 md:mb-4 text-brand-navy">
             Your goals are our goals
           </p>
 
@@ -43,10 +43,10 @@ export default function InvestInYourself() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {statistics.map((stat, index) => (
               <div key={index} className="flex flex-col items-center">
-                <div className="text-[64px] font-bold mb-2" style={{ color: '#D35400' }}>
+                <div className="text-[64px] font-bold mb-2 text-brand-orange">
                   {stat.number}
                 </div>
-                <div className="text-[16px] font-semibold uppercase tracking-wide" style={{ color: '#D35400' }}>
+                <div className="text-[16px] font-semibold uppercase tracking-wide text-brand-orange">
                   {stat.label}
                 </div>
               </div>

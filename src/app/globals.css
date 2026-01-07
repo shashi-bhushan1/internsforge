@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f7f2e1;
   --foreground: #171717;
 }
 
@@ -9,6 +9,14 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
+  
+  /* Brand Colors */
+  --color-brand-page: #f7f2e1;
+  --color-brand-navy: #071733;
+  --color-brand-blue: #1B4D8F;
+  --color-brand-orange: #F57A1F;
+  --color-brand-yellow: #F4B325;
+  --color-brand-cyan: #01b0ef;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,11 +51,25 @@ body {
 }
 
 .animate-scroll-right-to-left {
-  animation: scroll-right-to-left 8s linear infinite;
+  animation: scroll-right-to-left 12s linear infinite !important;
+  will-change: transform;
 }
 
 .animate-scroll-left-to-right {
-  animation: scroll-left-to-right 8s linear infinite;
+  animation: scroll-left-to-right 15s linear infinite !important;
+  will-change: transform;
+}
+
+.animate-scroll-right-to-left-fast {
+  animation: scroll-right-to-left 10s linear infinite !important;
+  will-change: transform;
+}
+
+/* Pause animation on hover */
+.group:hover .animate-scroll-right-to-left,
+.group:hover .animate-scroll-left-to-right,
+.group:hover .animate-scroll-right-to-left-fast {
+  animation-play-state: paused;
 }
 
 .scrollbar-hide {

@@ -22,13 +22,13 @@ const statistics = [
 
 export default function AboutHero() {
   return (
-    <section className="bg-white py-4 md:py-8 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] overflow-hidden">
+    <section className="bg-brand-page py-4 md:py-8 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
           {/* Left Section */}
           <div className="space-y-3 lg:space-y-4">
             {/* How it Started */}
-            <h6 className="text-[14px] font-medium" style={{ color: '#F97316' }}>How it Started</h6>
+            <h6 className="text-[14px] font-medium text-brand-orange">How it Started</h6>
             
             {/* Main Title */}
             <h1 className="text-[32px] md:text-[40px] font-bold text-gray-900 leading-tight">
@@ -138,8 +138,8 @@ export default function AboutHero() {
               {/* Decorative Elements */}
               {/* Orange circles and arrow near top-left image */}
               <div className="absolute top-8 left-36 md:left-44 z-20 flex items-center gap-1.5">
-                <div className="w-2.5 h-2.5 bg-orange-500 rounded-full"></div>
-                <div className="w-7 h-7 bg-orange-500 rounded-full flex items-center justify-center">
+                <div className="w-2.5 h-2.5 bg-brand-orange rounded-full"></div>
+                <div className="w-7 h-7 bg-brand-orange rounded-full flex items-center justify-center">
                   <svg width="16" height="16" viewBox="0 0 20 20" fill="white">
                     <path d="M5 15 L10 5 L15 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M8 7 L10 5 L12 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -180,7 +180,7 @@ export default function AboutHero() {
             <div className="grid grid-cols-2 gap-3 w-full">
               {statistics.map((stat, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-md p-3 md:p-4 border border-gray-100">
-                  <div className="text-2xl md:text-[36px] font-bold mb-1" style={{ color: '#F97316' }}>
+                  <div className="text-2xl md:text-[36px] font-bold mb-1 text-brand-orange">
                     {stat.number}
                   </div>
                   <div className="text-xs md:text-[13px] font-medium text-gray-900">

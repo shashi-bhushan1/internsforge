@@ -26,14 +26,14 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="bg-white py-12 md:py-20 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
+    <section className="bg-brand-page py-12 md:py-20 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
           {/* Left Section: Contact Form */}
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-10 lg:p-12 flex flex-col">
             {/* Header */}
             <div className="mb-8">
-              <p className="text-sm md:text-base font-semibold mb-3" style={{ color: '#FF9800' }}>
+              <p className="text-sm md:text-base font-semibold mb-3 text-brand-orange">
                 Get in Touch
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
@@ -60,7 +60,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     placeholder="First name"
                     required
-                    className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-400 text-base transition-all"
+                    className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent text-gray-900 placeholder-gray-400 text-base transition-all"
                   />
                 </div>
                 <div>
@@ -75,7 +75,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     placeholder="Last name"
                     required
-                    className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-400 text-base transition-all"
+                    className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent text-gray-900 placeholder-gray-400 text-base transition-all"
                   />
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function ContactSection() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="w-full px-8 py-3.5 md:py-4 bg-brand-orange hover:bg-brand-cyan text-white font-semibold text-base md:text-lg rounded-full transition-colors shadow-sm"
               >
                 Send Message
               </button>
@@ -152,7 +152,7 @@ export default function ContactSection() {
               <div className="space-y-6 flex-1">
                 {/* Email */}
                 <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center shadow-sm" style={{ backgroundColor: '#E3F2FD' }}>
+                  <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center shadow-sm" style={{ backgroundColor: '#E3F2FD' }}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect x="2" y="4" width="20" height="16" rx="2" stroke="#2196F3" strokeWidth="2"/>
                       <path d="M2 6L12 13L22 6" stroke="#2196F3" strokeWidth="2" strokeLinecap="round"/>
@@ -160,7 +160,7 @@ export default function ContactSection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg text-gray-900 mb-1.5">Email</h3>
-                    <a href="mailto:support@internsforge.com" className="text-base md:text-lg text-gray-700 hover:text-orange-500 transition-colors break-all">
+                    <a href="mailto:support@internsforge.com" className="text-base md:text-lg text-gray-700 hover:text-brand-cyan transition-colors break-all">
                       support@internsforge.com
                     </a>
                   </div>
@@ -168,14 +168,14 @@ export default function ContactSection() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center shadow-sm" style={{ backgroundColor: '#E3F2FD' }}>
+                  <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center shadow-sm" style={{ backgroundColor: '#E3F2FD' }}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="#2196F3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg text-gray-900 mb-1.5">Phone</h3>
-                    <a href="tel:+916361187682" className="text-base md:text-lg text-gray-700 hover:text-orange-500 transition-colors">
+                    <a href="tel:+916361187682" className="text-base md:text-lg text-gray-700 hover:text-brand-cyan transition-colors">
                       +91 6361187682
                     </a>
                   </div>
@@ -183,14 +183,14 @@ export default function ContactSection() {
 
                 {/* WhatsApp */}
                 <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center shadow-sm" style={{ backgroundColor: '#E8F5E9' }}>
+                  <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center shadow-sm" style={{ backgroundColor: '#E8F5E9' }}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.042-.024-4.976 1.293-1.059-4.916-.024-.042A9.86 9.86 0 0112.001 2.001c5.421 0 9.848 4.409 9.848 9.83 0 5.421-4.427 9.83-9.848 9.83"/>
                     </svg>
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg text-gray-900 mb-1.5">WhatsApp</h3>
-                    <a href="https://wa.me/916361187682" target="_blank" rel="noopener noreferrer" className="text-base md:text-lg text-gray-700 hover:text-orange-500 transition-colors">
+                    <a href="https://wa.me/916361187682" target="_blank" rel="noopener noreferrer" className="text-base md:text-lg text-gray-700 hover:text-brand-cyan transition-colors">
                       +91 6361187682
                     </a>
                   </div>

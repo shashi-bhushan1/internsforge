@@ -76,7 +76,7 @@ const collageImages = [
 
 export default function Hero() {
   return (
-    <section className="bg-white min-h-[500px] md:h-[500px] flex items-center px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] py-8 md:py-6">
+    <section className="bg-brand-page min-h-[500px] md:h-[500px] flex items-center px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] py-8 md:py-6">
       <div className="max-w-[1600px] w-full flex flex-col lg:flex-row gap-6 items-start">
         {/* Mobile: Image Collage Section First */}
         <div className="flex-[0.9] relative w-full h-full lg:hidden mb-6 order-1">
@@ -98,7 +98,7 @@ export default function Hero() {
                 height={180}
                 className="h-full w-full object-cover"
               />
-              <div className="absolute top-2 right-2 w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+              <div className="absolute top-2 right-2 w-6 h-6 bg-brand-orange rounded-full flex items-center justify-center">
                 <svg width="12" height="12" viewBox="0 0 20 20" fill="white">
                   <path d="M10 2L2 6L10 10L18 6L10 2Z" />
                   <path d="M2 17L10 22L18 17L10 12L2 17Z" />
@@ -127,12 +127,12 @@ export default function Hero() {
           </div>
 
           {/* Statistics Boxes - Mobile */}
-          <div className="absolute -left-2 top-24 bg-[#2b1a13] text-white rounded-xl px-3 py-2 shadow-lg w-24 flex flex-col items-start gap-1">
+          <div className="absolute -left-2 top-24 bg-brand-navy text-white rounded-xl px-3 py-2 shadow-lg w-24 flex flex-col items-start gap-1">
             <div className="text-xs font-semibold">50k+</div>
             <div className="text-[10px] font-medium">Projects</div>
           </div>
 
-          <div className="absolute -right-2 top-16 bg-[#2b1a13] text-white rounded-lg px-2 py-3 shadow-lg w-10 flex items-center justify-center rotate-90">
+          <div className="absolute -right-2 top-16 bg-brand-navy text-white rounded-lg px-2 py-3 shadow-lg w-10 flex items-center justify-center rotate-90">
             <div className="flex flex-col items-center gap-1 -rotate-90">
               <span className="text-xs font-semibold">25k+</span>
               <span className="text-[8px] leading-3 text-center">Happy Students</span>
@@ -144,7 +144,7 @@ export default function Hero() {
             <div className="text-[10px] font-semibold text-gray-800">Happy Students</div>
           </div>
 
-          <div className="absolute right-0 bottom-2 bg-orange-500 text-white rounded-lg shadow-lg px-3 py-2 w-40 flex items-center gap-2">
+          <div className="absolute right-0 bottom-2 bg-brand-orange text-white rounded-lg shadow-lg px-3 py-2 w-40 flex items-center gap-2">
             <span className="text-base">★</span>
             <div className="flex flex-col">
               <span className="text-sm font-semibold">4.8</span>
@@ -153,10 +153,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex-[1.35] space-y-3 pt-2 w-full order-2 lg:order-none">
-          <p className="text-[11px] sm:text-[12.8px] font-semibold text-orange-500">Hi, there</p>
+        <div className="flex-[1.35] space-y-3 pt-2 w-full order-2 lg:order-0">
+          <p className="text-[11px] sm:text-[12.8px] font-semibold text-brand-orange">Hi, there</p>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight font-extrabold text-gray-900">
-            <span className="text-orange-500">InternsForge</span> Is Here To Be<br />
+            <span className="text-brand-orange">InternsForge</span> Is Here To Be<br />
             Your New Learning Partner
           </h1>
           <h2 className="text-lg sm:text-xl font-semibold text-gray-900">
@@ -174,7 +174,7 @@ export default function Hero() {
           </p>
 
           <div className="pt-1">
-            <h3 className="text-xl sm:text-2xl font-bold text-orange-500 mb-3">
+            <h3 className="text-xl sm:text-2xl font-bold text-brand-orange mb-3">
               Our Services
             </h3>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -201,7 +201,7 @@ export default function Hero() {
         </div>
 
         <div className="flex-[0.9] relative w-full h-full hidden lg:block lg:order-2">
-          <div className="absolute -right-6 top-10 h-[300px] xl:h-[400px] w-[300px] xl:w-[400px] rounded-full border-2 border-dashed border-orange-300" />
+          <div className="absolute -right-6 top-10 h-[300px] xl:h-[400px] w-[300px] xl:w-[400px] rounded-full border-2 border-dashed border-brand-orange/30" />
 
           <div className="relative grid grid-cols-2 gap-3 mt-10">
             <div className="rounded-2xl overflow-hidden shadow-sm bg-gray-100 h-28 xl:h-36">
@@ -243,12 +243,12 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="absolute -left-2 top-32 bg-[#2b1a13] text-white rounded-2xl px-4 xl:px-5 py-3 xl:py-4 shadow-lg w-28 xl:w-32 flex flex-col items-start gap-1.5">
+          <div className="absolute -left-2 top-32 bg-brand-navy text-white rounded-2xl px-4 xl:px-5 py-3 xl:py-4 shadow-lg w-28 xl:w-32 flex flex-col items-start gap-1.5">
             <div className="text-sm xl:text-base font-semibold">50k+</div>
             <div className="text-xs xl:text-sm font-medium">Projects</div>
           </div>
 
-          <div className="absolute -right-6 top-24 bg-[#2b1a13] text-white rounded-[16px] px-2 xl:px-3 py-4 xl:py-5 shadow-lg w-12 xl:w-14 flex items-center justify-center">
+          <div className="absolute -right-6 top-24 bg-brand-navy text-white rounded-[16px] px-2 xl:px-3 py-4 xl:py-5 shadow-lg w-12 xl:w-14 flex items-center justify-center">
             <div className="flex flex-col items-center gap-1.5 xl:gap-2">
               <span className="text-sm xl:text-base font-semibold">25k+</span>
               <span className="text-[10px] xl:text-xs leading-3 xl:leading-4 text-center">
@@ -264,7 +264,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="absolute right-0 bottom-0 bg-orange-500 text-white rounded-[14px] shadow-lg px-4 xl:px-5 py-2.5 xl:py-3 w-48 xl:w-56 flex items-center gap-2 xl:gap-2.5">
+          <div className="absolute right-0 bottom-0 bg-brand-orange text-white rounded-[14px] shadow-lg px-4 xl:px-5 py-2.5 xl:py-3 w-48 xl:w-56 flex items-center gap-2 xl:gap-2.5">
             <span className="text-lg xl:text-xl">★</span>
             <div className="flex flex-col">
               <span className="text-base xl:text-lg font-semibold">4.8</span>

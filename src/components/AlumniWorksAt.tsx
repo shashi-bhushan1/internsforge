@@ -1,225 +1,138 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+
+// Map company names to their image files
+const companyImageMap: { [key: string]: string } = {
+  'Amazon': '/alumni/Amazon.svg',
+  'Meta': '/alumni/Meta.svg',
+  'Microsoft': '/alumni/Microsoft.svg',
+  'Unity': '/alumni/Unity.svg',
+  'HCLTech': '/alumni/Hcl.svg',
+  'Oracle': '/alumni/Oracle.svg',
+  'Walmart': '/alumni/Walmart.svg',
+  'PayPal': '/alumni/PayPal.svg',
+  'Salesforce': '/alumni/Salesforce.svg',
+  'TCS': '/alumni/TCS.svg',
+  'Infosys': '/alumni/Infosys.svg',
+  'Wipro': '/alumni/Wipro.webp',
+  'Tech Mahindra': '/alumni/Tech_Mahindra.svg',
+  'Zoho': '/alumni/Zoho.svg',
+  'Caterpillar': '/alumni/Caterpillar.svg',
+  'Citi Bank': '/alumni/Citi_bank.svg',
+  'Ford': '/alumni/Ford.svg',
+  'Innodata': '/alumni/Innodata.png',
+  'LKQ': '/alumni/LKQ.svg',
+  'Wakefitt': '/alumni/Wakefitt.png',
+};
 
 const companies = [
-  // Top Row
-  {
-    name: "Meta",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 bg-blue-600 rounded flex items-center justify-center">
-          <span className="text-white font-bold text-xl">∞</span>
-        </div>
-        <span className="text-blue-600 font-semibold text-sm">Meta</span>
-      </div>
-    )
-  },
-  {
-    name: "Microsoft",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 grid grid-cols-2 gap-0.5">
-          <div className="bg-blue-500 rounded-tl"></div>
-          <div className="bg-green-500 rounded-tr"></div>
-          <div className="bg-yellow-500 rounded-bl"></div>
-          <div className="bg-red-500 rounded-br"></div>
-        </div>
-        <span className="text-gray-600 font-semibold text-sm">Microsoft</span>
-      </div>
-    )
-  },
-  {
-    name: "Amazon",
-    logo: (
-      <div className="flex items-center gap-1">
-        <span className="text-black font-semibold text-sm">amazon</span>
-        <svg width="50" height="12" viewBox="0 0 50 12" fill="none">
-          <path d="M5 2C10 8 15 8 20 8C25 8 30 8 35 2" stroke="#FF9900" strokeWidth="2" fill="none" strokeLinecap="round"/>
-          <path d="M35 2L40 8L45 2" stroke="#FF9900" strokeWidth="2" fill="none" strokeLinecap="round"/>
-        </svg>
-      </div>
-    )
-  },
+  // Row 1
   {
     name: "Unity",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 bg-black rounded flex items-center justify-center">
-          <div className="w-8 h-8 bg-white rounded-sm transform rotate-45"></div>
-        </div>
-        <span className="text-black font-semibold text-sm lowercase">unity</span>
-      </div>
-    )
+    image: companyImageMap['Unity']
   },
   {
     name: "HCLTech",
-    logo: (
-      <div className="flex items-center">
-        <span className="text-blue-600 font-semibold text-sm">HCLTech</span>
-      </div>
-    )
+    image: companyImageMap['HCLTech']
   },
   {
     name: "Microsoft",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 grid grid-cols-2 gap-0.5">
-          <div className="bg-blue-500 rounded-tl"></div>
-          <div className="bg-green-500 rounded-tr"></div>
-          <div className="bg-yellow-500 rounded-bl"></div>
-          <div className="bg-red-500 rounded-br"></div>
-        </div>
-        <span className="text-gray-600 font-semibold text-sm">Microsoft</span>
-      </div>
-    )
+    image: companyImageMap['Microsoft']
   },
   {
     name: "Meta",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 bg-blue-600 rounded flex items-center justify-center">
-          <span className="text-white font-bold text-xl">∞</span>
-        </div>
-        <span className="text-blue-600 font-semibold text-sm">Meta</span>
-      </div>
-    )
+    image: companyImageMap['Meta']
   },
   {
     name: "Amazon",
-    logo: (
-      <div className="flex items-center gap-1">
-        <span className="text-black font-semibold text-sm">amazon</span>
-        <svg width="50" height="12" viewBox="0 0 50 12" fill="none">
-          <path d="M5 2C10 8 15 8 20 8C25 8 30 8 35 2" stroke="#FF9900" strokeWidth="2" fill="none" strokeLinecap="round"/>
-          <path d="M35 2L40 8L45 2" stroke="#FF9900" strokeWidth="2" fill="none" strokeLinecap="round"/>
-        </svg>
-      </div>
-    )
-  },
-  {
-    name: "Unity",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 bg-black rounded flex items-center justify-center">
-          <div className="w-8 h-8 bg-white rounded-sm transform rotate-45"></div>
-        </div>
-        <span className="text-black font-semibold text-sm lowercase">unity</span>
-      </div>
-    )
-  },
-  // Bottom Row
-  {
-    name: "HP",
-    logo: (
-      <div className="flex items-center">
-        <div className="w-12 h-12 bg-blue-600 rounded flex items-center justify-center">
-          <span className="text-white font-bold text-xl">h</span>
-        </div>
-      </div>
-    )
+    image: companyImageMap['Amazon']
   },
   {
     name: "Oracle",
-    logo: (
-      <div className="flex items-center">
-        <span className="text-red-600 font-semibold text-sm uppercase">ORACLE</span>
-      </div>
-    )
+    image: companyImageMap['Oracle']
   },
   {
     name: "Walmart",
-    logo: (
-      <div className="flex items-center gap-1">
-        <span className="text-blue-600 font-semibold text-sm">Walmart</span>
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="#FFC72C">
-          <path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5L6 0Z"/>
-        </svg>
-      </div>
-    )
+    image: companyImageMap['Walmart']
+  },
+  // Row 2
+  {
+    name: "PayPal",
+    image: companyImageMap['PayPal']
+  },
+  {
+    name: "Salesforce",
+    image: companyImageMap['Salesforce']
+  },
+  {
+    name: "TCS",
+    image: companyImageMap['TCS']
+  },
+  {
+    name: "Infosys",
+    image: companyImageMap['Infosys']
+  },
+  {
+    name: "Wipro",
+    image: companyImageMap['Wipro']
+  },
+  {
+    name: "Tech Mahindra",
+    image: companyImageMap['Tech Mahindra']
+  },
+  {
+    name: "Zoho",
+    image: companyImageMap['Zoho']
+  },
+  // Row 3
+  {
+    name: "Caterpillar",
+    image: companyImageMap['Caterpillar']
+  },
+  {
+    name: "Citi Bank",
+    image: companyImageMap['Citi Bank']
+  },
+  {
+    name: "Ford",
+    image: companyImageMap['Ford']
+  },
+  {
+    name: "Innodata",
+    image: companyImageMap['Innodata']
+  },
+  {
+    name: "LKQ",
+    image: companyImageMap['LKQ']
+  },
+  {
+    name: "Wakefitt",
+    image: companyImageMap['Wakefitt']
+  },
+  {
+    name: "Microsoft",
+    image: companyImageMap['Microsoft']
   },
   {
     name: "Meta",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 bg-blue-600 rounded flex items-center justify-center">
-          <span className="text-white font-bold text-xl">∞</span>
-        </div>
-        <span className="text-blue-600 font-semibold text-sm">Meta</span>
-      </div>
-    )
-  },
-  {
-    name: "Microsoft",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 grid grid-cols-2 gap-0.5">
-          <div className="bg-blue-500 rounded-tl"></div>
-          <div className="bg-green-500 rounded-tr"></div>
-          <div className="bg-yellow-500 rounded-bl"></div>
-          <div className="bg-red-500 rounded-br"></div>
-        </div>
-        <span className="text-gray-600 font-semibold text-sm">Microsoft</span>
-      </div>
-    )
-  },
-  {
-    name: "Amazon",
-    logo: (
-      <div className="flex items-center gap-1">
-        <span className="text-black font-semibold text-sm">amazon</span>
-        <svg width="50" height="12" viewBox="0 0 50 12" fill="none">
-          <path d="M5 2C10 8 15 8 20 8C25 8 30 8 35 2" stroke="#FF9900" strokeWidth="2" fill="none" strokeLinecap="round"/>
-          <path d="M35 2L40 8L45 2" stroke="#FF9900" strokeWidth="2" fill="none" strokeLinecap="round"/>
-        </svg>
-      </div>
-    )
-  },
-  {
-    name: "Unity",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 bg-black rounded flex items-center justify-center">
-          <div className="w-8 h-8 bg-white rounded-sm transform rotate-45"></div>
-        </div>
-        <span className="text-black font-semibold text-sm lowercase">unity</span>
-      </div>
-    )
-  },
-  {
-    name: "HCLTech",
-    logo: (
-      <div className="flex items-center">
-        <span className="text-blue-600 font-semibold text-sm">HCLTech</span>
-      </div>
-    )
-  },
-  {
-    name: "Microsoft",
-    logo: (
-      <div className="flex items-center gap-2">
-        <div className="w-12 h-12 grid grid-cols-2 gap-0.5">
-          <div className="bg-blue-500 rounded-tl"></div>
-          <div className="bg-green-500 rounded-tr"></div>
-          <div className="bg-yellow-500 rounded-bl"></div>
-          <div className="bg-red-500 rounded-br"></div>
-        </div>
-        <span className="text-gray-600 font-semibold text-sm">Microsoft</span>
-      </div>
-    )
+    image: companyImageMap['Meta']
   }
 ];
 
 export default function AlumniWorksAt() {
-  const topRow = companies.slice(0, 9);
-  const bottomRow = companies.slice(9);
+  const row1 = companies.slice(0, 7);
+  const row2 = companies.slice(7, 14);
+  const row3 = companies.slice(14, 22); // Ensure we get all 8 items
 
   // Duplicate arrays for seamless infinite scroll
-  const topRowDuplicated = [...topRow, ...topRow];
-  const bottomRowDuplicated = [...bottomRow, ...bottomRow];
+  const row1Duplicated = [...row1, ...row1];
+  const row2Duplicated = [...row2, ...row2];
+  const row3Duplicated = [...row3, ...row3];
 
   return (
-    <section className="bg-white py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
+    <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
@@ -231,25 +144,72 @@ export default function AlumniWorksAt() {
           </p>
         </div>
 
-        {/* Companies Grid - Two Rows with Infinite Scroll */}
-        <div className="space-y-6 overflow-hidden">
-          {/* Top Row - Scroll Right to Left */}
+        {/* Companies Grid - Three Rows with Infinite Scroll */}
+        <div className="space-y-4 md:space-y-6 overflow-hidden group">
+          {/* Row 1 - Scroll Right to Left */}
           <div className="relative overflow-hidden">
             <div className="flex gap-4 md:gap-6 animate-scroll-right-to-left">
-              {topRowDuplicated.map((company, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 flex items-center justify-center min-w-[140px] flex-shrink-0">
-                  {company.logo}
+              {row1Duplicated.map((company, index) => (
+                <div 
+                  key={index} 
+                  className="p-4 md:p-5 flex items-center justify-center w-[140px] md:w-[160px] flex-shrink-0 h-24 md:h-28 transition-opacity duration-300 hover:opacity-80"
+                >
+                  {company.image && (
+                    <Image
+                      src={company.image}
+                      alt={company.name}
+                      width={120}
+                      height={80}
+                      className="w-full h-full object-contain"
+                      unoptimized
+                    />
+                  )}
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Bottom Row - Scroll Left to Right */}
+          {/* Row 2 - Scroll Left to Right */}
           <div className="relative overflow-hidden">
             <div className="flex gap-4 md:gap-6 animate-scroll-left-to-right">
-              {bottomRowDuplicated.map((company, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 flex items-center justify-center min-w-[140px] flex-shrink-0">
-                  {company.logo}
+              {row2Duplicated.map((company, index) => (
+                <div 
+                  key={index} 
+                  className="p-4 md:p-5 flex items-center justify-center w-[140px] md:w-[160px] flex-shrink-0 h-24 md:h-28 transition-opacity duration-300 hover:opacity-80"
+                >
+                  {company.image && (
+                    <Image
+                      src={company.image}
+                      alt={company.name}
+                      width={120}
+                      height={80}
+                      className="w-full h-full object-contain"
+                      unoptimized
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 3 - Scroll Right to Left (Faster) */}
+          <div className="relative overflow-hidden">
+            <div className="flex gap-4 md:gap-6 animate-scroll-right-to-left-fast">
+              {row3Duplicated.map((company, index) => (
+                <div 
+                  key={index} 
+                  className="p-4 md:p-5 flex items-center justify-center w-[140px] md:w-[160px] flex-shrink-0 h-24 md:h-28 transition-opacity duration-300 hover:opacity-80"
+                >
+                  {company.image && (
+                    <Image
+                      src={company.image}
+                      alt={company.name}
+                      width={120}
+                      height={80}
+                      className="w-full h-full object-contain"
+                      unoptimized
+                    />
+                  )}
                 </div>
               ))}
             </div>

@@ -62,7 +62,7 @@ const teamMembers = [
 
 export default function MeetTheTeam() {
   return (
-    <section className="bg-white py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
+    <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
@@ -80,7 +80,7 @@ export default function MeetTheTeam() {
             {teamMembers.map((member, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-lg shadow-md overflow-hidden w-[280px] h-[350px] p-[10px] border-2 border-gray-200 cursor-pointer transition-all duration-300 hover:border-orange-500 hover:shadow-xl group"
+                className="bg-white rounded-lg shadow-md overflow-hidden w-[280px] h-[350px] p-[10px] border-2 border-gray-200 cursor-pointer transition-all duration-300 hover:border-brand-orange hover:shadow-xl group"
               >
                 <div className="relative w-full h-full rounded overflow-hidden">
                   <Image

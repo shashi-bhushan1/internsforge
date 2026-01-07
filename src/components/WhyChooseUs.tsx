@@ -119,7 +119,7 @@ const benefits = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-white py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] relative">
+    <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:pl-[145px] lg:pr-[145px] relative">
       <div className="max-w-[1600px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
@@ -140,7 +140,7 @@ export default function WhyChooseUs() {
                 {/* Icon and Title Section */}
                 <div className="flex items-start gap-3 mb-3">
                   {/* Icon */}
-                  <div className={`${benefit.iconColor} w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0`}>
+                  <div className={`${benefit.iconColor} w-14 h-14 rounded-lg flex items-center justify-center shrink-0`}>
                     {benefit.icon}
                   </div>
 
