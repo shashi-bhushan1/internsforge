@@ -681,7 +681,7 @@ export default function Header() {
             {isAdvancedDropdownOpen && (
               <div
                 ref={advancedDropdownRef}
-                className="absolute left-0 top-full bg-white shadow-xl border border-gray-200 rounded-lg z-50 min-w-[1100px]"
+                className="absolute left-0 top-full bg-white shadow-xl border border-gray-200 rounded-lg z-50 w-[400px]"
                 style={{ 
                   maxHeight: 'calc(100vh - 120px)', 
                   overflowY: 'auto',
@@ -691,8 +691,8 @@ export default function Header() {
                 onMouseEnter={() => handleDropdownEnter(setIsAdvancedDropdownOpen, advancedDropdownTimeoutRef)}
                 onMouseLeave={() => handleDropdownLeave(setIsAdvancedDropdownOpen, advancedDropdownTimeoutRef)}
               >
-                <div className="px-6 py-6">
-                  <div className="grid grid-cols-2 gap-4">
+                <div className="px-4 py-4">
+                  <div className="flex flex-col gap-3">
                     {advancedCourses.length > 0 ? (
                       advancedCourses.map((courseName, index) => {
                         const image = getCourseImage(courseName);
@@ -734,7 +734,7 @@ export default function Header() {
                         );
                       })
                     ) : (
-                      <div className="col-span-2 text-center py-8 text-gray-500 text-sm">
+                      <div className="text-center py-8 text-gray-500 text-sm">
                         No courses available.
                       </div>
                     )}
