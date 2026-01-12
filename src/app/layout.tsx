@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import FloatingButtons from "@/components/common/FloatingButtons";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -10,6 +11,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://internsforge.com'), // Update with your actual domain
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
   title: {
     default: "InternsForge - Your Learning Partner for Career Success",
     template: "%s | InternsForge"
@@ -84,9 +90,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} font-sans antialiased`}
+        className={`${poppins.variable} font-sans antialiased overflow-x-hidden`}
       >
         {children}
+        <FloatingButtons />
       </body>
     </html>
   );

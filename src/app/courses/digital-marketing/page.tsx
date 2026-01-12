@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Header from "@/components/Header";
-import CourseHeroWrapper from "@/components/CourseHeroWrapper";
-import CourseCurriculum from "@/components/CourseCurriculum";
-import PricingPlans from "@/components/PricingPlans";
-import CertificateSection from "@/components/CertificateSection";
-import AlumniWorksAt from "@/components/AlumniWorksAt";
-import InvestInYourself from "@/components/InvestInYourself";
-import StudentTestimonials from "@/components/StudentTestimonials";
-import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import CourseHeroWrapper from "@/components/courses/CourseHeroWrapper";
+import CourseKeyBenefits from "@/components/courses/CourseKeyBenefits";
+import CourseCurriculum from "@/components/courses/CourseCurriculum";
+import PricingPlans from "@/components/courses/PricingPlans";
+import CertificateSection from "@/components/courses/CertificateSection";
+import AlumniWorksAt from "@/components/common/AlumniWorksAt";
+import InvestInYourself from "@/components/common/InvestInYourself";
+import StudentTestimonials from "@/components/common/StudentTestimonials";
+import FAQ from "@/components/common/FAQ";
+import { getPaymentLinks } from "@/data/paymentLinks";
 
 export const metadata: Metadata = {
   title: "Digital Marketing Course",
@@ -26,6 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function DigitalMarketingPage() {
+  const paymentLinks = getPaymentLinks('digital-marketing');
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -51,7 +54,7 @@ export default function DigitalMarketingPage() {
         <main className="w-full">
           <Suspense fallback={<div className="h-[400px] bg-brand-page" />}>
             <CourseHeroWrapper
-              courseName="Digital Marketing"
+              courseName="Master Digital Marketing"
               defaultDescription="Master digital marketing strategies and tools. Learn SEO, social media marketing, content creation, and analytics to grow businesses."
               defaultImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
               price="$85.00"
@@ -59,8 +62,16 @@ export default function DigitalMarketingPage() {
               lessons={72}
             />
           </Suspense>
+          <CourseKeyBenefits 
+            capstoneProjects={2}
+          />
           <CourseCurriculum courseType="digital-marketing" />
-          <PricingPlans />
+          <PricingPlans 
+            selfPacedLink={paymentLinks?.selfPaced.link}
+            mentorLedLink={paymentLinks?.mentorLed.link}
+            selfPacedPrice={`₹${paymentLinks?.selfPaced.fee.toLocaleString('en-IN')}`}
+            mentorLedPrice={`₹${paymentLinks?.mentorLed.fee.toLocaleString('en-IN')}`}
+          />
           <CertificateSection />
           <AlumniWorksAt />
           <InvestInYourself />

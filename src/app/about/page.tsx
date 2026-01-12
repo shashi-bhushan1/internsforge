@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import AboutHero from "@/components/AboutHero";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import AlumniWorksAt from "@/components/AlumniWorksAt";
-import MeetTheTeam from "@/components/MeetTheTeam";
-import StudentTestimonials from "@/components/StudentTestimonials";
-import Footer from "@/components/Footer";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import AboutHero from "@/components/about/AboutHero";
+import WhyChooseUs from "@/components/common/WhyChooseUs";
+import AlumniWorksAt from "@/components/common/AlumniWorksAt";
+import MeetTheTeam from "@/components/home/MeetTheTeam";
+import StudentTestimonials from "@/components/common/StudentTestimonials";
 
 export const metadata: Metadata = {
   title: "About Us",

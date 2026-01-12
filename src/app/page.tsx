@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import CertificationPartners from "@/components/CertificationPartners";
-import EducationalAlliances from "@/components/EducationalAlliances";
-import ProgramsUnique from "@/components/ProgramsUnique";
-import ComboPacks from "@/components/ComboPacks";
-import TrendingCourses from "@/components/TrendingCourses";
-import TopFeaturedCourses from "@/components/TopFeaturedCourses";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import LearningJourney from "@/components/LearningJourney";
-import ToolsYouWillLearn from "@/components/ToolsYouWillLearn";
-import MeetTheTeam from "@/components/MeetTheTeam";
-import AlumniWorksAt from "@/components/AlumniWorksAt";
-import InvestInYourself from "@/components/InvestInYourself";
-import StudentTestimonials from "@/components/StudentTestimonials";
-import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import Hero from "@/components/home/Hero";
+import CertificationPartners from "@/components/home/CertificationPartners";
+import EducationalAlliances from "@/components/home/EducationalAlliances";
+import ProgramsUnique from "@/components/home/ProgramsUnique";
+import ComboPacks from "@/components/home/ComboPacks";
+import TrendingCourses from "@/components/home/TrendingCourses";
+import TopFeaturedCourses from "@/components/home/TopFeaturedCourses";
+import WhyChooseUs from "@/components/common/WhyChooseUs";
+import LearningJourney from "@/components/home/LearningJourney";
+import ToolsYouWillLearn from "@/components/home/ToolsYouWillLearn";
+import MeetTheTeam from "@/components/home/MeetTheTeam";
+import AlumniWorksAt from "@/components/common/AlumniWorksAt";
+import InvestInYourself from "@/components/common/InvestInYourself";
+import StudentTestimonials from "@/components/common/StudentTestimonials";
+import FAQ from "@/components/common/FAQ";
 
 export const metadata: Metadata = {
   title: "Home",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ContactSection from "@/components/ContactSection";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
+import ContactSection from "@/components/contact/ContactSection";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -47,10 +47,10 @@ export default function ContactPage() {
       ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "BHIVE Workspace – No.112, AKR Tech Park, B Block, 7th Mile Hosur Rd, Krishna Reddy Industrial Area",
+        "streetAddress": "Rudhra Coworks, 126, RNS Plaza, KIADB Industrial Area, 1, near Tech Mahindra Gate, next to Hyderabad Magic, Phase II",
         "addressLocality": "Bengaluru",
         "addressRegion": "Karnataka",
-        "postalCode": "560068",
+        "postalCode": "560100",
         "addressCountry": "IN"
       }
     }
