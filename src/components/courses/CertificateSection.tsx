@@ -252,7 +252,7 @@ export default function CertificateSection() {
             </button>
 
             {/* Full Certificate */}
-            <div className={`relative ${selectedCert.type === "excellence" ? "bg-gradient-to-br from-gray-800 via-gray-900 to-black" : "bg-gray-100"} p-8 md:p-12 lg:p-16 min-h-[800px] flex flex-col`}>
+            <div className={`relative ${selectedCert.type === "excellence" ? "bg-linear-to-br from-gray-800 via-gray-900 to-black" : "bg-gray-100"} p-8 md:p-12 lg:p-16 min-h-[800px] flex flex-col`}>
               {/* Sample Certificate Watermark */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -rotate-45">
@@ -301,7 +301,7 @@ export default function CertificateSection() {
                 <h2 className={`${selectedCert.type === "excellence" ? "text-yellow-400" : "text-gray-800"} font-bold text-2xl md:text-3xl lg:text-4xl mb-4`} style={{ fontFamily: 'serif' }}>
                   {selectedCert.title}
                 </h2>
-                <div className={`${selectedCert.type === "excellence" ? "bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent" : "bg-gradient-to-r from-transparent via-yellow-200 to-transparent"} py-3 mb-4`}>
+                <div className={`${selectedCert.type === "excellence" ? "bg-linear-to-r from-transparent via-yellow-400/30 to-transparent" : "bg-linear-to-r from-transparent via-yellow-200 to-transparent"} py-3 mb-4`}>
                   <p className={`${selectedCert.type === "excellence" ? "text-yellow-200" : "text-gray-700"} text-base md:text-lg`}>
                     This certificate is proudly presented to
                   </p>

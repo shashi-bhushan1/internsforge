@@ -21,9 +21,23 @@ const getCourseRoute = (courseName: string): string | null => {
     return '/courses/network-security';
   }
   if (name.includes('cyber security')) {
+    // Check if it's the advanced version
+    if (name.includes('advanced') || name.includes('advance') || name.includes('6 months')) {
+      return '/courses/cyber-security-advanced';
+    }
     return '/courses/cyber-security';
   }
-  if (name.includes('web development') || name.includes('full stack')) {
+  if (name.includes('full stack web development')) {
+    // Check if it's the MERN version
+    if (name.includes('mern')) {
+      return '/courses/full-stack-web-development-mern';
+    }
+    return '/courses/full-stack-web-development';
+  }
+  if (name.includes('full stack')) {
+    return '/courses/full-stack-web-development';
+  }
+  if (name.includes('web development')) {
     return '/courses/web-development';
   }
   if (name.includes('digital marketing')) {
@@ -73,9 +87,9 @@ const getCourseDuration = (courseName: string): string => {
       if (name.includes('network security') && extractedDuration.toLowerCase().includes('6 months')) {
         return '6 Months – Advance Course';
       }
-      // If it's Full Stack Web Development with 6 Months, keep as is
-      if (name.includes('full stack web development') && extractedDuration.toLowerCase().includes('6 months')) {
-        return extractedDuration;
+      // If it's Full Stack Web Development (MERN), return 6 Months
+      if (name.includes('full stack web development') && name.includes('mern')) {
+        return '6 Months';
       }
       // For Full Stack Web Development (4 Months), return as is
       if (name.includes('full stack web development') && extractedDuration.toLowerCase().includes('4 months')) {
@@ -102,7 +116,7 @@ const getCourseDuration = (courseName: string): string => {
   }
   
   // 4 Months courses
-  if (name.includes('full stack web development') && !name.includes('6 months')) {
+  if (name.includes('full stack web development') && !name.includes('mern') && !name.includes('6 months')) {
     return '4 Months';
   }
   
@@ -360,9 +374,9 @@ const getCourseImage = (courseName: string): string => {
 // Course data structure mapped from the table
 const coursesByCategory: Record<string, string[]> = {
   'Advanced': [
-    'Advance Cyber Security (6 Months)',
+    'Advanced Cyber Security (6 Months)',
     'Network Security (6 Months)',
-    'Full Stack Web Development (6 Months – Advance Course)'
+    'Full Stack Web Development (MERN)'
   ],
   'Computer Science / IT': [
     'Artificial Intelligence',

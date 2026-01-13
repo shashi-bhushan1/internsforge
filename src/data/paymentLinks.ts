@@ -367,10 +367,22 @@ export const paymentLinks: Record<string, PaymentLinks> = {
     },
     duration: "3 Months"
   },
-  // Advanced Courses (6 Months) - Keep existing advanced course pricing
+  // 3 Months Courses (₹6500 / ₹9000) - Internship
   "cyber-security": {
     selfPaced: {
-      link: "https://rzp.io/rzp/cakOHxlg",
+      link: "https://rzp.io/rzp/g8BbYvLv",
+      fee: 6500
+    },
+    mentorLed: {
+      link: "https://rzp.io/rzp/VAxiAmbc",
+      fee: 9000
+    },
+    duration: "3 Months"
+  },
+  // Advanced Courses (6 Months) - Advance Course
+  "cyber-security-advanced": {
+    selfPaced: {
+      link: "https://rzp.io/rzp/cakOHxIg",
       fee: 15000
     },
     mentorLed: {
@@ -392,7 +404,32 @@ export const paymentLinks: Record<string, PaymentLinks> = {
     duration: "6 Months",
     isAdvanced: true
   },
+  // 3 Months Courses (₹6500 / ₹9000) - Internship
   "web-development": {
+    selfPaced: {
+      link: "https://rzp.io/rzp/JttZCYq",
+      fee: 6500
+    },
+    mentorLed: {
+      link: "https://rzp.io/rzp/KJy1yKh",
+      fee: 9000
+    },
+    duration: "3 Months"
+  },
+  // 4 Months Courses (₹7000 / ₹10000) - Internship
+  "full-stack-web-development": {
+    selfPaced: {
+      link: "https://rzp.io/rzp/gk62Bx1",
+      fee: 7000
+    },
+    mentorLed: {
+      link: "https://rzp.io/rzp/Q9sZJC44",
+      fee: 10000
+    },
+    duration: "4 Months"
+  },
+  // Advanced Courses (6 Months) - Advance Course
+  "full-stack-web-development-mern": {
     selfPaced: {
       link: "https://rzp.io/rzp/eqt1Jlq",
       fee: 15000

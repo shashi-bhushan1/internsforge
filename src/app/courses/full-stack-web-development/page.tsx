@@ -14,32 +14,32 @@ import FAQ from "@/components/common/FAQ";
 import { getPaymentLinks } from "@/data/paymentLinks";
 
 export const metadata: Metadata = {
-  title: "Web Development Course",
-  description: "Learn Web Development with InternsForge. Master HTML, CSS, JavaScript, and modern frameworks. Build real-world projects and advance your career in web development.",
+  title: "Full Stack Web Development Course",
+  description: "Master Full Stack Web Development with InternsForge. Learn frontend and backend technologies, build complete web applications, and advance your career in web development.",
   openGraph: {
-    title: "Web Development Course - InternsForge",
-    description: "Learn Web Development with InternsForge. Master HTML, CSS, JavaScript, and modern frameworks.",
-    url: "https://internsforge.com/courses/web-development",
+    title: "Full Stack Web Development Course - InternsForge",
+    description: "Master Full Stack Web Development. Learn frontend and backend technologies, build complete web applications, and advance your career.",
+    url: "https://internsforge.com/courses/full-stack-web-development",
   },
   twitter: {
-    title: "Web Development Course - InternsForge",
-    description: "Learn Web Development with InternsForge. Master HTML, CSS, JavaScript, and modern frameworks.",
+    title: "Full Stack Web Development Course - InternsForge",
+    description: "Master Full Stack Web Development. Learn frontend and backend technologies, build complete web applications, and advance your career.",
   },
 };
 
-export default function WebDevelopmentPage() {
-  const paymentLinks = getPaymentLinks('web-development');
+export default function FullStackWebDevelopmentPage() {
+  const paymentLinks = getPaymentLinks('full-stack-web-development');
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "Web Development Course",
-    "description": "Comprehensive Web Development course covering HTML, CSS, JavaScript, and modern frameworks. Build real-world projects and advance your career.",
+    "name": "Full Stack Web Development Course",
+    "description": "Comprehensive Full Stack Web Development course covering frontend and backend technologies. Build complete web applications and advance your career.",
     "provider": {
       "@type": "EducationalOrganization",
       "name": "InternsForge",
       "url": "https://internsforge.com"
     },
-    "courseCode": "WEB-DEV-001",
+    "courseCode": "FSWD-001",
     "educationalLevel": "Advanced"
   };
 
@@ -54,18 +54,18 @@ export default function WebDevelopmentPage() {
         <main className="w-full">
           <Suspense fallback={<div className="h-[400px] bg-brand-page" />}>
             <CourseHeroWrapper
-              courseName="Master Web Development"
-              defaultDescription="Build modern, responsive web applications. Learn HTML, CSS, JavaScript, and industry-standard technologies to create scalable solutions."
+              courseName="Full Stack Web Development"
+              defaultDescription="Master full stack web development from frontend to backend. Learn modern technologies, build scalable applications, and create complete web solutions."
               defaultImage="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
               price="$85.00"
-              chapters={9}
-              lessons={54}
+              chapters={14}
+              lessons={84}
             />
           </Suspense>
           <CourseKeyBenefits 
             capstoneProjects={2}
           />
-          <CourseCurriculum courseType="web-development" courseName="Web Development Course" />
+          <CourseCurriculum courseType="full-stack-web-development" courseName="Full Stack Web Development Course" />
           <PricingPlans 
             selfPacedLink={paymentLinks?.selfPaced.link}
             mentorLedLink={paymentLinks?.mentorLed.link}
@@ -83,4 +83,3 @@ export default function WebDevelopmentPage() {
     </>
   );
 }
-

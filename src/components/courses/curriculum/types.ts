@@ -9,7 +9,8 @@ export interface Module {
 }
 
 export type CourseType = 
-  | 'web-development' 
+  | 'web-development'
+  | 'full-stack-web-development'
   | 'cyber-security' 
   | 'digital-marketing' 
   | 'network-security' 

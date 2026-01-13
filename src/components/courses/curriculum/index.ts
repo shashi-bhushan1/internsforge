@@ -2,6 +2,7 @@ import { Module } from './types';
 
 // Import all course modules
 export { webDevelopmentModules } from './webDevelopment';
+export { fullStackWebDevelopmentModules } from './fullStackWebDevelopment';
 export { cyberSecurityModules } from './cyberSecurity';
 export { digitalMarketingModules } from './digitalMarketing';
 export { networkSecurityModules } from './networkSecurity';
@@ -44,6 +45,11 @@ export const courseConfigs: Record<string, CourseConfig> = {
     title: 'Web Development',
     subtitle: '',
     curriculumTitle: 'The Curriculum That Powers Our Web Development Course.'
+  },
+  'full-stack-web-development': {
+    title: 'Full Stack Web Development',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our Full Stack Web Development Course.'
   },
   'cyber-security': {
     title: 'Cybersecurity',

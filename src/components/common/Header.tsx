@@ -240,9 +240,23 @@ const getCourseRoute = (courseName: string): string | null => {
     return '/courses/network-security';
   }
   if (name.includes('cyber security')) {
+    // Check if it's the advanced version
+    if (name.includes('advanced') || name.includes('advance') || name.includes('6 months')) {
+      return '/courses/cyber-security-advanced';
+    }
     return '/courses/cyber-security';
   }
-  if (name.includes('web development') || name.includes('full stack')) {
+  if (name.includes('full stack web development')) {
+    // Check if it's the MERN version
+    if (name.includes('mern')) {
+      return '/courses/full-stack-web-development-mern';
+    }
+    return '/courses/full-stack-web-development';
+  }
+  if (name.includes('full stack')) {
+    return '/courses/full-stack-web-development';
+  }
+  if (name.includes('web development')) {
     return '/courses/web-development';
   }
   if (name.includes('digital marketing')) {
@@ -275,9 +289,9 @@ const getCourseRoute = (courseName: string): string | null => {
 // Course data structure
 const coursesByCategory: Record<string, string[]> = {
   'Advanced': [
-    'Advance Cyber Security (6 Months)',
+    'Advanced Cyber Security (6 Months)',
     'Network Security (6 Months)',
-    'Full Stack Web Development (6 Months – Advance Course)'
+    'Full Stack Web Development (MERN)'
   ],
   'Computer Science / IT': [
     'Artificial Intelligence',

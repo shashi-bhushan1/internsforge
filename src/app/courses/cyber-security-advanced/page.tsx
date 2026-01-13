@@ -14,32 +14,32 @@ import FAQ from "@/components/common/FAQ";
 import { getPaymentLinks } from "@/data/paymentLinks";
 
 export const metadata: Metadata = {
-  title: "Web Development Course",
-  description: "Learn Web Development with InternsForge. Master HTML, CSS, JavaScript, and modern frameworks. Build real-world projects and advance your career in web development.",
+  title: "Advanced Cyber Security Course (6 Months)",
+  description: "Master advanced Cyber Security with our comprehensive 6-month course at InternsForge. Learn ethical hacking, network security, threat management, and advanced defense strategies.",
   openGraph: {
-    title: "Web Development Course - InternsForge",
-    description: "Learn Web Development with InternsForge. Master HTML, CSS, JavaScript, and modern frameworks.",
-    url: "https://internsforge.com/courses/web-development",
+    title: "Advanced Cyber Security Course (6 Months) - InternsForge",
+    description: "Master advanced Cyber Security. Learn ethical hacking, network security, threat management, and advanced defense strategies in this comprehensive 6-month course.",
+    url: "https://internsforge.com/courses/cyber-security-advanced",
   },
   twitter: {
-    title: "Web Development Course - InternsForge",
-    description: "Learn Web Development with InternsForge. Master HTML, CSS, JavaScript, and modern frameworks.",
+    title: "Advanced Cyber Security Course (6 Months) - InternsForge",
+    description: "Master advanced Cyber Security. Learn ethical hacking, network security, threat management, and advanced defense strategies.",
   },
 };
 
-export default function WebDevelopmentPage() {
-  const paymentLinks = getPaymentLinks('web-development');
+export default function AdvanceCyberSecurityPage() {
+  const paymentLinks = getPaymentLinks('cyber-security-advanced');
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "Web Development Course",
-    "description": "Comprehensive Web Development course covering HTML, CSS, JavaScript, and modern frameworks. Build real-world projects and advance your career.",
+    "name": "Advanced Cyber Security Course (6 Months)",
+    "description": "Comprehensive 6-month Advanced Cyber Security course covering ethical hacking, network security, threat management, and advanced defense strategies. Build expertise in cybersecurity.",
     "provider": {
       "@type": "EducationalOrganization",
       "name": "InternsForge",
       "url": "https://internsforge.com"
     },
-    "courseCode": "WEB-DEV-001",
+    "courseCode": "ADV-CYB-SEC-001",
     "educationalLevel": "Advanced"
   };
 
@@ -54,18 +54,18 @@ export default function WebDevelopmentPage() {
         <main className="w-full">
           <Suspense fallback={<div className="h-[400px] bg-brand-page" />}>
             <CourseHeroWrapper
-              courseName="Master Web Development"
-              defaultDescription="Build modern, responsive web applications. Learn HTML, CSS, JavaScript, and industry-standard technologies to create scalable solutions."
-              defaultImage="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+              courseName="Advanced Cyber Security"
+              defaultDescription="Master advanced cybersecurity concepts and techniques. Learn ethical hacking, network security, threat management, and implement robust defense strategies to protect digital assets."
+              defaultImage="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
               price="$85.00"
-              chapters={9}
-              lessons={54}
+              chapters={24}
+              lessons={72}
             />
           </Suspense>
           <CourseKeyBenefits 
             capstoneProjects={2}
           />
-          <CourseCurriculum courseType="web-development" courseName="Web Development Course" />
+          <CourseCurriculum courseType="cyber-security" courseName="Advanced Cyber Security Course" />
           <PricingPlans 
             selfPacedLink={paymentLinks?.selfPaced.link}
             mentorLedLink={paymentLinks?.mentorLed.link}
@@ -83,4 +83,3 @@ export default function WebDevelopmentPage() {
     </>
   );
 }
-

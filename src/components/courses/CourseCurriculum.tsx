@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
   webDevelopmentModules,
+  fullStackWebDevelopmentModules,
   cyberSecurityModules,
   digitalMarketingModules,
   networkSecurityModules,
@@ -51,6 +52,8 @@ function CourseCurriculum({ courseType, courseName }: CourseCurriculumProps) {
     switch (courseType) {
       case 'web-development':
         return webDevelopmentModules;
+      case 'full-stack-web-development':
+        return fullStackWebDevelopmentModules;
       case 'cyber-security':
         return cyberSecurityModules;
       case 'digital-marketing':

@@ -1,6 +1,6 @@
 import { Module } from './types';
 
-export const webDevelopmentModules: Module[] = [
+export const fullStackWebDevelopmentModules: Module[] = [
   {
     id: 1,
     title: 'Introduction to Web Technologies',
@@ -144,6 +144,79 @@ export const webDevelopmentModules: Module[] = [
     hours: 0,
     topics: [
       'Live Website Design Project'
+    ]
+  },
+  {
+    id: 10,
+    title: 'Database MySQL',
+    lectures: 0,
+    hours: 0,
+    topics: [
+      'Introduction to MySQL',
+      'Basic queries',
+      'DB model design',
+      'Normalization',
+      'Select queries',
+      'Joins'
+    ]
+  },
+  {
+    id: 11,
+    title: 'Database MongoDB',
+    lectures: 0,
+    hours: 0,
+    topics: [
+      'Introduction to MongoDB',
+      'CRUD operations',
+      'Basic cursor methods',
+      'Aggregation',
+      'Server-side vs Client-side rendering'
+    ]
+  },
+  {
+    id: 12,
+    title: 'Node.js',
+    lectures: 0,
+    hours: 0,
+    topics: [
+      'Node.js Basics',
+      'Node & MongoDB Connectivity',
+      'Connection to MongoDB (local & atlas)',
+      'Frontend + Backend connectivity',
+      'Introduction to Node.js, Npm packages',
+      'Node.js & Express.js',
+      'What is Express',
+      'API methods',
+      'Request & Response objects',
+      'URL & Query parameters'
+    ]
+  },
+  {
+    id: 13,
+    title: 'Node & MongoDB Connectivity: Node.js Deployment',
+    lectures: 0,
+    hours: 0,
+    topics: [
+      'Connection to MongoDB (local & atlas)',
+      'Frontend + Backend connectivity',
+      'Dotenv',
+      'Deployment',
+      'Frontend + Backend connectivity'
+    ]
+  },
+  {
+    id: 14,
+    title: 'Authentication & JWT',
+    lectures: 0,
+    hours: 0,
+    topics: [
+      'Authentication',
+      'bcrypt',
+      'Frontend + Backend connectivity',
+      'JWT',
+      'Custom middleware',
+      'Authorization',
+      'Frontend + Backend connectivity'
     ]
   }
 ];
