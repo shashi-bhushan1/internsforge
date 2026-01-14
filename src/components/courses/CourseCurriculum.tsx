@@ -33,7 +33,7 @@ import {
   courseConfigs,
   type Module,
   type CourseType
-} from './curriculum';
+} from '@/data/curriculum';
 
 interface CourseCurriculumProps {
   courseType: CourseType;
@@ -221,7 +221,7 @@ function CourseCurriculum({ courseType, courseName }: CourseCurriculumProps) {
             {/* Right Column - Module Details (Scrollable) */}
             <div className="w-full lg:w-[55%] flex flex-col">
               {/* Header with Download Button */}
-              <div className="flex items-start justify-between mb-6 flex-shrink-0">
+              <div className="flex items-start justify-between mb-6 shrink-0">
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
                   Topics and Sub-Topics
                 </h2>

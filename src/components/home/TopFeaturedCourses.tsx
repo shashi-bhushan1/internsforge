@@ -291,10 +291,10 @@ const getCourseImage = (courseName: string): string => {
     return 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'; // Cloud technology
   }
   if (name.includes('python')) {
-    return 'https://images.unsplash.com/photo-1526379095098-d400fd0bf040?auto=format&fit=crop&w=1200&q=80'; // Python code
+    return 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80'; // Python code
   }
   if (name.includes('java')) {
-    return 'https://images.unsplash.com/photo-1526379095098-d400fd0bf040?auto=format&fit=crop&w=1200&q=80'; // Programming code
+    return 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=1200&q=80'; // Java programming code
   }
   if (name.includes('data structure') || name.includes('algorithm')) {
     return 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80'; // Algorithms
@@ -325,7 +325,7 @@ const getCourseImage = (courseName: string): string => {
     return 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1200&q=80'; // Battery Electric Vehicle - modern electric car
   }
   if (name.includes('hybrid electrical') || name.includes('hev')) {
-    return 'https://images.unsplash.com/photo-1593941707882-a5bac6861d08?auto=format&fit=crop&w=1200&q=80'; // Hybrid Electric Vehicle - hybrid car technology
+    return 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1200&q=80'; // Hybrid Electric Vehicle - hybrid car technology
   }
   if (name.includes('drone mechanics') || name.includes('drone')) {
     return 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1200&q=80'; // Drone

@@ -130,7 +130,7 @@ export default function PricingPlans({
                       <div key={index} className="flex items-start gap-2">
                         {feature.included ? (
                           <svg
-                            className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5"
+                            className="w-5 h-5 text-green-600 shrink-0 mt-0.5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
@@ -138,7 +138,7 @@ export default function PricingPlans({
                           </svg>
                         ) : (
                           <svg
-                            className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"
+                            className="w-5 h-5 text-red-600 shrink-0 mt-0.5"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"

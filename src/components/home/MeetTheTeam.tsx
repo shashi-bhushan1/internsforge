@@ -5,57 +5,57 @@ import Image from 'next/image';
 
 const teamMembers = [
   {
-    name: "Kamrujama Ansari",
+    name: "Megha Shetty",
+    title: "CA Finalist",
+    image: "/mentors/meghaShetty.webp",
+    linkedin: "#"
+  },
+  {
+    name: "Tushar Agarwal",
+    title: "Drone Skill Training",
+    image: "/mentors/tusharAgarwal.webp",
+    linkedin: "#"
+  },
+  {
+    name: "Aabid Padder",
+    title: "Data Analyst",
+    image: "/mentors/Aabid Padder.webp",
+    linkedin: "#"
+  },
+  {
+    name: "Suman Shekhar",
+    title: "SWE 2 @People Inc.",
+    image: "/mentors/sumanSekhar.webp",
+    linkedin: "#"
+  },
+  {
+    name: "Sakshi Pandey",
+    title: "Cyber Security & Digital Forensics",
+    image: "/mentors/sakshiPandey.webp",
+    linkedin: "#"
+  },
+  {
+    name: "Uttam Grade",
+    title: "Data Scientist",
+    image: "/mentors/uttamGrade.webp",
+    linkedin: "#"
+  },
+  {
+    name: "Subhasis Thakurta",
+    title: "Human Resources Leader",
+    image: "/mentors/SubhashisThakurta.webp",
+    linkedin: "#"
+  },
+  {
+    name: "Arib Nawal",
+    title: "Data science corporate trainer",
+    image: "/mentors/aribNawal.webp",
+    linkedin: "#"
+  },
+  {
+    name: "Iqbal Ansari",
     title: "Full Stack Developer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-    linkedin: "#"
-  },
-  {
-    name: "Team Member 2",
-    title: "Position Title",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-    linkedin: "#"
-  },
-  {
-    name: "Team Member 3",
-    title: "Position Title",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
-    linkedin: "#"
-  },
-  {
-    name: "Team Member 4",
-    title: "Position Title",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
-    linkedin: "#"
-  },
-  {
-    name: "Team Member 5",
-    title: "Position Title",
-    image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=400&q=80",
-    linkedin: "#"
-  },
-  {
-    name: "Team Member 6",
-    title: "Position Title",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
-    linkedin: "#"
-  },
-  {
-    name: "Team Member 7",
-    title: "Position Title",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
-    linkedin: "#"
-  },
-  {
-    name: "Team Member 8",
-    title: "Position Title",
-    image: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=400&q=80",
-    linkedin: "#"
-  },
-  {
-    name: "Team Member 9",
-    title: "Position Title",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    image: "/mentors/Iqbal Ansari.webp",
     linkedin: "#"
   }
 ];
@@ -66,7 +66,7 @@ export default function MeetTheTeam() {
       <div className="max-w-[1600px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
-          <p className="text-[16px] font-semibold text-gray-700 uppercase tracking-wide mb-2">
+          <p className="text-base font-normal text-gray-800 mb-2">
             Meet the team
           </p>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900">
@@ -80,14 +80,14 @@ export default function MeetTheTeam() {
             {teamMembers.map((member, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-lg shadow-md overflow-hidden w-[280px] h-[350px] p-[10px] border-2 border-gray-200 cursor-pointer transition-all duration-300 hover:border-brand-orange hover:shadow-xl group"
+                className="bg-white rounded-lg shadow-md overflow-hidden w-[280px] h-[350px] p-[10px] border-2 border-gray-200 transition-all duration-300 hover:border-brand-orange hover:shadow-xl group"
               >
                 <div className="relative w-full h-full rounded overflow-hidden">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="object-cover transition-all duration-300"
                   />
                   
                   {/* White overlay card that slides up from bottom on hover */}
@@ -105,7 +105,7 @@ export default function MeetTheTeam() {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 ml-3 hover:bg-blue-700 transition-colors"
+                      className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shrink-0 ml-3 hover:bg-blue-700 transition-colors cursor-pointer"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="white">

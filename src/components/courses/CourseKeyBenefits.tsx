@@ -74,7 +74,7 @@ export default function CourseKeyBenefits({
       <div className="max-w-[1600px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 lg:items-center">
           {/* Left Side - Title and Description */}
-          <div className="lg:max-w-[420px] lg:flex-shrink-0 w-full">
+          <div className="lg:max-w-[420px] lg:shrink-0 w-full">
             <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900 mb-5 md:mb-6 tracking-tight text-center">
               <span className="block whitespace-nowrap">What Makes Learning</span>
               <span className="block mt-3 md:mt-4 whitespace-nowrap">With Us Different</span>
@@ -85,14 +85,14 @@ export default function CourseKeyBenefits({
           </div>
 
           {/* Right Side - Benefits Cards Grid (2 columns, 3 rows) */}
-          <div className="flex-1 w-full max-w-[500px] lg:ml-auto lg:flex-shrink-0">
+          <div className="flex-1 w-full max-w-[500px] lg:ml-auto lg:shrink-0">
             <div className="grid grid-cols-2 gap-3">
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
                   className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 hover:border-brand-orange hover:shadow-md transition-all flex flex-col items-center text-center min-h-[120px] md:min-h-[140px] justify-center"
                 >
-                  <div className="flex-shrink-0 text-brand-orange mb-3">
+                  <div className="shrink-0 text-brand-orange mb-3">
                     {benefit.icon}
                   </div>
                   <h3 className="text-xs md:text-sm font-semibold text-gray-900">

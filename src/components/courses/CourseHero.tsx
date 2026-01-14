@@ -25,7 +25,7 @@ export default function CourseHero({
       <div className="max-w-[1600px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center">
           {/* Left Side - Course Image */}
-          <div className="w-full lg:w-[45%] flex-shrink-0">
+          <div className="w-full lg:w-[45%] shrink-0">
             <div className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src={imageUrl}
