@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import {
   webDevelopmentModules,
   fullStackWebDevelopmentModules,
+  androidAppDevelopmentModules,
   cyberSecurityModules,
   digitalMarketingModules,
   networkSecurityModules,
@@ -30,6 +31,14 @@ import {
   batteryElectricVehiclesModules,
   bioInformaticsModules,
   droneMechanicsModules,
+  amazonWebServicesModules,
+  constructionPlanningModules,
+  gameDevelopmentModules,
+  icEngineModules,
+  roboticsModules,
+  medicalCodingModules,
+  geneticEngineeringModules,
+  operationManagementModules,
   courseConfigs,
   type Module,
   type CourseType
@@ -54,6 +63,8 @@ function CourseCurriculum({ courseType, courseName }: CourseCurriculumProps) {
         return webDevelopmentModules;
       case 'full-stack-web-development':
         return fullStackWebDevelopmentModules;
+      case 'android-app-development':
+        return androidAppDevelopmentModules;
       case 'cyber-security':
         return cyberSecurityModules;
       case 'digital-marketing':
@@ -106,6 +117,22 @@ function CourseCurriculum({ courseType, courseName }: CourseCurriculumProps) {
         return bioInformaticsModules;
       case 'drone-mechanics':
         return droneMechanicsModules;
+      case 'amazon-web-services':
+        return amazonWebServicesModules;
+      case 'construction-planning':
+        return constructionPlanningModules;
+      case 'game-development':
+        return gameDevelopmentModules;
+      case 'ic-engine':
+        return icEngineModules;
+      case 'robotics':
+        return roboticsModules;
+      case 'medical-coding':
+        return medicalCodingModules;
+      case 'genetic-engineering':
+        return geneticEngineeringModules;
+      case 'operation-management':
+        return operationManagementModules;
       default:
         return webDevelopmentModules;
     }

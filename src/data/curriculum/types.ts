@@ -11,6 +11,7 @@ export interface Module {
 export type CourseType = 
   | 'web-development'
   | 'full-stack-web-development'
+  | 'android-app-development'
   | 'cyber-security' 
   | 'digital-marketing' 
   | 'network-security' 
@@ -36,4 +37,12 @@ export type CourseType =
   | 'data-structure-algorithm'
   | 'battery-electric-vehicles'
   | 'bio-informatics'
-  | 'drone-mechanics';
+  | 'drone-mechanics'
+  | 'amazon-web-services'
+  | 'construction-planning'
+  | 'game-development'
+  | 'ic-engine'
+  | 'robotics'
+  | 'medical-coding'
+  | 'genetic-engineering'
+  | 'operation-management';

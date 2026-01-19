@@ -1,7 +1,26 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 
 export default function ProgramsUnique() {
+  const handleExploreMore = () => {
+    const element = document.getElementById('top-featured-courses');
+    if (element) {
+      // Get header height to account for sticky header
+      const header = document.querySelector('header');
+      const headerHeight = header ? (window.innerWidth >= 768 ? 120 : header.offsetHeight) : 80;
+      
+      // Calculate the position to scroll to (element position minus header height)
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerHeight - 20; // Extra 20px for spacing
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
   return (
     <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
@@ -22,11 +41,11 @@ export default function ProgramsUnique() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
-              <button className="px-6 md:px-8 py-3 md:py-3.5 bg-brand-orange text-white font-semibold rounded-full hover:bg-brand-cyan transition-colors text-sm md:text-base shadow-sm">
+              <button 
+                onClick={handleExploreMore}
+                className="px-6 md:px-8 py-3 md:py-3.5 bg-brand-orange text-white font-semibold rounded-full hover:bg-brand-cyan transition-colors text-sm md:text-base shadow-sm"
+              >
                 Explore More
-              </button>
-              <button className="px-6 md:px-8 py-3 md:py-3.5 bg-brand-orange text-white font-semibold rounded-full hover:bg-brand-cyan transition-colors text-sm md:text-base shadow-sm">
-                Subscribe Now
               </button>
             </div>
           </div>

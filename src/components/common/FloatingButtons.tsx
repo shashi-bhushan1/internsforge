@@ -12,7 +12,10 @@ export default function FloatingButtons() {
       {/* Scroll to Top Button */}
       <button 
         onClick={scrollToTop}
-        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg"
+        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-colors shadow-lg"
+        style={{ backgroundColor: '#2b2929' }}
+        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#3a3838'}
+        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2b2929'}
         aria-label="Scroll to top"
       >
         <svg width="20" height="20" className="sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +25,7 @@ export default function FloatingButtons() {
       
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/916361187682"
+        href="https://wa.me/917019680860"
         target="_blank"
         rel="noopener noreferrer"
         className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors shadow-lg"

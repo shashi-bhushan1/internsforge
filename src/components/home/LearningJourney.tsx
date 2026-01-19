@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useRef, useEffect } from 'react';
 
 const journeySteps = [
   {
@@ -91,6 +93,52 @@ const journeySteps = [
 ];
 
 export default function LearningJourney() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+
+  const checkScrollPosition = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setShowLeftArrow(scrollLeft > 0);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      checkScrollPosition();
+      container.addEventListener('scroll', checkScrollPosition);
+      window.addEventListener('resize', checkScrollPosition);
+      
+      return () => {
+        container.removeEventListener('scroll', checkScrollPosition);
+        window.removeEventListener('resize', checkScrollPosition);
+      };
+    }
+  }, []);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = 200; // Base card width, adjust for md breakpoint
+      scrollContainerRef.current.scrollBy({
+        left: -cardWidth - 16, // card width + gap
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = 200; // Base card width, adjust for md breakpoint
+      scrollContainerRef.current.scrollBy({
+        left: cardWidth + 16, // card width + gap
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px] relative">
       <div className="max-w-[1600px] mx-auto">
@@ -105,44 +153,76 @@ export default function LearningJourney() {
         </div>
 
         {/* Journey Steps Flowchart */}
-        <div className="relative overflow-x-auto pb-8">
-          <div className="flex items-start gap-4 md:gap-6 min-w-max px-4">
-            {journeySteps.map((step, index) => (
-              <div key={index} className="relative flex-shrink-0">
-                {/* Connecting Line */}
-                {index < journeySteps.length - 1 && (
-                  <div className="absolute top-8 left-full w-6 md:w-8 z-0" style={{ transform: 'translateX(-2px)' }}>
-                    <svg width="100%" height="4" viewBox="0 0 100 4" preserveAspectRatio="none">
-                      <line x1="0" y1="2" x2="100" y2="2" stroke="#9CA3AF" strokeWidth="2" strokeDasharray="4 4"/>
-                      <polygon points="100,0 110,2 100,4" fill="#9CA3AF"/>
-                    </svg>
-                  </div>
-                )}
-                
-                {/* Step Card */}
-                <div className={`${step.color} rounded-lg shadow-md overflow-hidden w-[200px] md:w-[240px] relative z-10`}>
-                  {/* Icon */}
-                  <div className="flex items-center justify-center p-4">
-                    {step.icon}
-                  </div>
+        <div className="relative">
+          <div 
+            ref={scrollContainerRef}
+            className="relative overflow-x-auto pb-8 scrollbar-hide"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            <div className="flex items-start gap-4 md:gap-6 min-w-max px-4">
+              {journeySteps.map((step, index) => (
+                <div key={index} className="relative shrink-0">
+                  {/* Connecting Line */}
+                  {index < journeySteps.length - 1 && (
+                    <div className="absolute top-8 left-full w-6 md:w-8 z-0" style={{ transform: 'translateX(-2px)' }}>
+                      <svg width="100%" height="4" viewBox="0 0 100 4" preserveAspectRatio="none">
+                        <line x1="0" y1="2" x2="100" y2="2" stroke="#9CA3AF" strokeWidth="2" strokeDasharray="4 4"/>
+                        <polygon points="100,0 110,2 100,4" fill="#9CA3AF"/>
+                      </svg>
+                    </div>
+                  )}
+                  
+                  {/* Step Card */}
+                  <div className={`${step.color} rounded-lg shadow-md overflow-hidden w-[200px] md:w-[240px] relative z-10`}>
+                    {/* Icon */}
+                    <div className="flex items-center justify-center p-4">
+                      {step.icon}
+                    </div>
 
-                  {/* Title Bar */}
-                  <div className={`${step.titleBg} px-4 py-2`}>
-                    <h3 className="text-white font-semibold text-sm md:text-base text-center">
-                      {step.title}
-                    </h3>
-                  </div>
+                    {/* Title Bar */}
+                    <div className={`${step.titleBg} px-4 py-2`}>
+                      <h3 className="text-white font-semibold text-sm md:text-base text-center">
+                        {step.title}
+                      </h3>
+                    </div>
 
-                  {/* Description */}
-                  <div className="bg-white p-4">
-                    <p className="text-xs md:text-sm text-gray-700 leading-5 text-center">
-                      {step.description}
-                    </p>
+                    {/* Description */}
+                    <div className="bg-white p-4">
+                      <p className="text-xs md:text-sm text-gray-700 leading-5 text-center">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          {/* Left Arrow - Positioned outside the scrollable container */}
+          {showLeftArrow && (
+            <button
+              onClick={scrollLeft}
+              className="absolute left-[-16px] sm:left-[-20px] md:left-[-24px] top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-gray-200"
+              aria-label="Scroll left"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="#1b0905" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          )}
+
+          {/* Right Arrow - Positioned outside the scrollable container */}
+          {showRightArrow && (
+            <button
+              onClick={scrollRight}
+              className="absolute right-[-16px] sm:right-[-20px] md:right-[-24px] top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-gray-200"
+              aria-label="Scroll right"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="#1b0905" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </section>

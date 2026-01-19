@@ -3,6 +3,7 @@ import { Module } from './types';
 // Import all course modules
 export { webDevelopmentModules } from './webDevelopment';
 export { fullStackWebDevelopmentModules } from './fullStackWebDevelopment';
+export { androidAppDevelopmentModules } from './androidAppDevelopment';
 export { cyberSecurityModules } from './cyberSecurity';
 export { digitalMarketingModules } from './digitalMarketing';
 export { networkSecurityModules } from './networkSecurity';
@@ -29,6 +30,14 @@ export { dataStructureAlgorithmModules } from './dataStructureAlgorithm';
 export { batteryElectricVehiclesModules } from './batteryElectricVehicles';
 export { bioInformaticsModules } from './bioInformatics';
 export { droneMechanicsModules } from './droneMechanics';
+export { amazonWebServicesModules } from './amazonWebServices';
+export { constructionPlanningModules } from './constructionPlanning';
+export { gameDevelopmentModules } from './gameDevelopment';
+export { icEngineModules } from './icEngine';
+export { roboticsModules } from './robotics';
+export { medicalCodingModules } from './medicalCoding';
+export { geneticEngineeringModules } from './geneticEngineering';
+export { operationManagementModules } from './operationManagement';
 
 // Re-export types
 export type { Module, CourseType } from './types';
@@ -50,6 +59,11 @@ export const courseConfigs: Record<string, CourseConfig> = {
     title: 'Full Stack Web Development',
     subtitle: '',
     curriculumTitle: 'The Curriculum That Powers Our Full Stack Web Development Course.'
+  },
+  'android-app-development': {
+    title: 'Android App Development',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our Android App Development Course.'
   },
   'cyber-security': {
     title: 'Cybersecurity',
@@ -180,5 +194,45 @@ export const courseConfigs: Record<string, CourseConfig> = {
     title: 'Drone Mechanics',
     subtitle: '',
     curriculumTitle: 'The Curriculum That Powers Our Drone Mechanics Course.'
+  },
+  'amazon-web-services': {
+    title: 'Amazon Web Services (AWS)',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our Amazon Web Services (AWS) Course.'
+  },
+  'construction-planning': {
+    title: 'Construction Planning',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our Construction Planning Course.'
+  },
+  'game-development': {
+    title: 'Game Development',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our Game Development Course.'
+  },
+  'ic-engine': {
+    title: 'IC Engine',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our IC Engine Course.'
+  },
+  'robotics': {
+    title: 'Robotics',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our Robotics Course.'
+  },
+  'medical-coding': {
+    title: 'Medical Coding',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our Medical Coding Course.'
+  },
+  'genetic-engineering': {
+    title: 'Genetic Engineering',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our Genetic Engineering Course.'
+  },
+  'operation-management': {
+    title: 'Operation Management',
+    subtitle: '',
+    curriculumTitle: 'The Curriculum That Powers Our Operation Management Course.'
   }
 };

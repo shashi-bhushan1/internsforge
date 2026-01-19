@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 const teamMembers = [
@@ -61,6 +61,20 @@ const teamMembers = [
 ];
 
 export default function MeetTheTeam() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextMember = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === teamMembers.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevMember = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? teamMembers.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
@@ -74,8 +88,88 @@ export default function MeetTheTeam() {
           </h1>
         </div>
 
-        {/* Team Grid Container - 880px × 1090px */}
-        <div className="w-full lg:w-[880px] h-auto lg:h-[1090px] mx-auto">
+        {/* Mobile/Tablet View: Carousel with Arrow Navigation */}
+        <div className="lg:hidden">
+          <div className="relative w-full max-w-[280px] mx-auto">
+            {/* Team Member Card */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden w-[280px] h-[350px] p-[10px] border-2 border-gray-200 transition-all duration-300 hover:border-brand-orange hover:shadow-xl group mx-auto">
+              <div className="relative w-full h-full rounded overflow-hidden">
+                <Image
+                  src={teamMembers[currentIndex].image}
+                  alt={teamMembers[currentIndex].name}
+                  fill
+                  className="object-cover transition-all duration-300"
+                />
+                
+                {/* White overlay card that slides up from bottom on hover */}
+                <div className="absolute bottom-0 left-0 right-0 bg-white rounded-b-lg transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out px-4 py-3 flex items-center justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-base font-bold text-gray-900 mb-1">
+                      {teamMembers[currentIndex].name}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {teamMembers[currentIndex].title}
+                    </p>
+                  </div>
+                  {/* LinkedIn Icon */}
+                  <a 
+                    href={teamMembers[currentIndex].linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shrink-0 ml-3 hover:bg-blue-700 transition-colors cursor-pointer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <div className="flex items-center justify-center gap-4 mt-6">
+              {/* Left Arrow Button */}
+              <button
+                onClick={prevMember}
+                className="w-10 h-10 rounded-full bg-brand-orange hover:bg-brand-cyan flex items-center justify-center transition-colors shadow-md"
+                aria-label="Previous mentor"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </button>
+
+              {/* Right Arrow Button */}
+              <button
+                onClick={nextMember}
+                className="w-10 h-10 rounded-full bg-brand-orange hover:bg-brand-cyan flex items-center justify-center transition-colors shadow-md"
+                aria-label="Next mentor"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+            </div>
+
+            {/* Indicator Dots */}
+            <div className="flex justify-center gap-2 mt-4">
+              {teamMembers.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === currentIndex ? 'bg-brand-orange' : 'bg-gray-300'
+                  }`}
+                  aria-label={`Go to mentor ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop View: Grid Layout */}
+        <div className="hidden lg:block w-full lg:w-[880px] h-auto lg:h-[1090px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
             {teamMembers.map((member, index) => (
               <div 

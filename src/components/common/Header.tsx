@@ -531,7 +531,7 @@ export default function Header() {
   const displayCategories = programCategories.filter(cat => cat.name !== 'Advanced');
 
   return (
-    <header className="bg-brand-navy w-full h-auto md:h-[120px] sticky top-0 z-50 flex items-center px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px] py-4 md:py-0 relative">
+    <header className="w-full h-auto md:h-[120px] sticky top-0 z-50 flex items-center px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px] py-4 md:py-0 relative" style={{ backgroundColor: '#1b0905' }}>
       <div className="max-w-[1600px] w-full flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
         {/* Logo Section */}
         <div className="flex items-center justify-between w-full md:w-auto shrink-0">
@@ -547,71 +547,37 @@ export default function Header() {
             />
           </Link>
           
-          {/* Mobile: Hamburger Menu and Icon Buttons */}
+          {/* Mobile: Icon Buttons */}
           <div className="flex items-center gap-2 md:hidden">
+            {/* All Programs Button */}
             <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-white"
-              aria-label="Toggle menu"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center hover:bg-brand-cyan transition-colors"
+              aria-label="All Programs"
             >
-              {isMobileMenuOpen ? <MedicalCrossIcon /> : <HamburgerIcon />}
+              <HamburgerIcon />
             </button>
-            <button className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center hover:bg-brand-cyan transition-colors">
-              <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 5C15 5 10 7.5 10 12.5C10 15 11.5 17.5 13 18.75C11.5 20 10 22.5 10 25C10 30 15 32.5 20 32.5C25 32.5 30 30 30 25C30 22.5 28.5 20 27 18.75C28.5 17.5 30 15 30 12.5C30 7.5 25 5 20 5Z" fill="white"/>
+            {/* Enroll Now Button */}
+            <a 
+              href="https://wa.me/919063848879"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center hover:bg-brand-cyan transition-colors"
+              aria-label="Enroll Now"
+            >
+              <GraduationCapIcon />
+            </a>
+            {/* Advanced Button */}
+            <button 
+              onClick={() => setIsAdvancedDropdownOpen(!isAdvancedDropdownOpen)}
+              className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center hover:bg-brand-cyan transition-colors"
+              aria-label="Advanced"
+            >
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 3C7 3 4 5 4 9C4 11 5 13 6 14C5 15 4 17 4 19H6C6 17 7 16 8 16C9 16 10 17 10 19H12C12 17 13 16 14 16C15 16 16 17 16 19H18C18 17 17 15 16 14C17 13 18 11 18 9C18 5 15 3 12 3C11 3 10 3 10 3Z" fill="white"/>
               </svg>
             </button>
-            <button className="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center hover:bg-brand-cyan transition-colors">
-              <GraduationCapIcon />
-            </button>
           </div>
-          
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <div className="absolute top-full left-0 right-0 bg-brand-navy border-t border-gray-700 md:hidden z-50 max-h-[calc(100vh-100px)] overflow-y-auto">
-              <nav className="flex flex-col p-4 gap-3">
-                <Link 
-                  href="/" 
-                  className="flex items-center gap-2 text-brand-orange hover:text-brand-cyan transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <HouseIcon isActive={isHomePage} />
-                  <span className="font-medium text-sm">Home</span>
-                </Link>
-                <Link 
-                  href="/about" 
-                  className="flex items-center gap-2 text-brand-orange hover:text-brand-cyan transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <InfoIcon />
-                  <span className="font-medium text-sm">About Us</span>
-                </Link>
-                <Link 
-                  href="/careers" 
-                  className="flex items-center gap-2 text-brand-orange hover:text-brand-cyan transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <BriefcaseIcon />
-                  <span className="font-medium text-sm">Careers</span>
-                </Link>
-                <Link 
-                  href="/contact" 
-                  className="flex items-center gap-2 text-brand-orange hover:text-brand-cyan transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <EnvelopeIcon />
-                  <span className="font-medium text-sm">Contact</span>
-                </Link>
-                <button 
-                  className="flex items-center gap-2 bg-brand-orange text-white font-semibold py-2 px-4 rounded-full hover:bg-brand-cyan transition-colors text-sm mt-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <GraduationCapIcon />
-                  <span>Enroll Now</span>
-                </button>
-              </nav>
-            </div>
-          )}
         </div>
 
         {/* Program Buttons - Desktop Only */}
@@ -869,10 +835,15 @@ export default function Header() {
         </nav>
 
         {/* Enroll Now Button */}
-        <button className="flex items-center gap-1.5 md:gap-2 px-4 md:px-6 py-2 md:py-2.5 rounded-full bg-brand-orange text-white text-[11px] md:text-[12.8px] font-semibold hover:bg-brand-cyan transition-colors shadow-sm shrink-0 md:ml-8 w-full md:w-auto justify-center">
+        <a 
+          href="https://wa.me/919063848879"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex items-center gap-1.5 md:gap-2 px-4 md:px-6 py-2 md:py-2.5 rounded-full bg-brand-orange text-white text-[11px] md:text-[12.8px] font-semibold hover:bg-brand-cyan transition-colors shadow-sm shrink-0 md:ml-8"
+        >
           <GraduationCapIcon />
           <span>Enroll Now</span>
-        </button>
+        </a>
       </div>
     </header>
   );

@@ -74,12 +74,12 @@ const otherPartners = [
     logo: "/other_partners/iso.webp",
   },
   {
-    name: "IC3 Digital Literacy",
-    logo: "/other_partners/prodesk.webp", // Using prodesk as placeholder for IC3
+    name: "Prodesk",
+    logo: "/other_partners/prodesk.webp",
   },
   {
-    name: "IAF Accreditation",
-    logo: "/other_partners/s-s-innovations.webp", // Using s-s-innovations as placeholder for IAF
+    name: "S-S Innovations",
+    logo: "/other_partners/s-s-innovations.webp",
   },
   {
     name: "Startup India",
@@ -90,12 +90,12 @@ const otherPartners = [
     logo: "/other_partners/msme.webp",
   },
   {
-    name: "DRONA AVIATION",
-    logo: "/other_partners/prodesk.webp", // Placeholder - will be replaced later
+    name: "Certango",
+    logo: "/other_partners/certango.png",
   },
   {
-    name: "ITS Information Technology",
-    logo: "/other_partners/s-s-innovations.webp", // Placeholder - will be replaced later
+    name: "Faculty Paths",
+    logo: "/other_partners/facultypaths.webp",
   },
 ];
 
@@ -150,7 +150,7 @@ export default function CertificationPartners() {
         </div>
 
         <div className="w-full max-w-[688px] mx-auto">
-          <div className="bg-white rounded-lg p-4 md:p-6">
+          <div className="p-4 md:p-6">
             <h3 className="text-base sm:text-lg md:text-[19px] font-bold text-black underline text-center mb-6 md:mb-8" style={{ marginTop: '0px', marginLeft: '0px', marginRight: '0px', marginBottom: '32px' }}>
               Our other Partners
             </h3>

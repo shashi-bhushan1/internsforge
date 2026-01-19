@@ -31,7 +31,7 @@ export default function ContactPage() {
       "contactPoint": [
         {
           "@type": "ContactPoint",
-          "telephone": "+91-6361187682",
+          "telephone": "+91-7019680860",
           "contactType": "Customer Service",
           "email": "support@internsforge.com",
           "areaServed": "IN",
@@ -39,7 +39,7 @@ export default function ContactPage() {
         },
         {
           "@type": "ContactPoint",
-          "telephone": "+91-6361187682",
+          "telephone": "+91-7019680860",
           "contactType": "Customer Service",
           "areaServed": "IN",
           "availableLanguage": "English"

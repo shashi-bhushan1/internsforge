@@ -41,7 +41,7 @@ export default function Home() {
     "logo": "https://internsforge.com/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-6361187682",
+      "telephone": "+91-7019680860",
       "contactType": "Customer Service",
       "email": "support@internsforge.com",
       "areaServed": "IN",
