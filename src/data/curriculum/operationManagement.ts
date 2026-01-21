@@ -7,176 +7,141 @@ export const operationManagementModules: Module[] = [
     lectures: 0,
     hours: 0,
     topics: [
-      'Role of Operations in Organizations',
-      'Types of Production Systems',
-      'Operations Strategy Basics'
+      'Overview of Operations Management: definition, scope, and importance',
+      'Role of operations in manufacturing and service industries',
+      'Functions of Operations Manager',
+      'Relationship between operations, marketing, and finance'
     ]
   },
   {
     id: 2,
-    title: 'Operations Strategy & Competitive Priorities',
+    title: 'Operations Strategy and Competitiveness',
     lectures: 0,
     hours: 0,
     topics: [
-      'Process Strategy',
-      'Product-Process Matrix',
-      'Case Discussion'
+      'Operations strategy and alignment with business strategy',
+      'Competitive priorities: cost, quality, delivery, flexibility',
+      'Productivity and performance measurement',
+      'Case study on operations strategy'
     ]
   },
   {
     id: 3,
-    title: 'Process Design & Analysis',
+    title: 'Process Design and Analysis',
     lectures: 0,
     hours: 0,
     topics: [
-      'Process Flow Diagrams',
-      'Capacity Analysis',
-      'Bottleneck Identification',
-      'Process Improvement Techniques'
+      'Types of processes: job shop, batch, mass, continuous',
+      'Process flow analysis and mapping',
+      'Capacity planning and bottleneck analysis',
+      'Hands-on: Process flow diagram creation'
     ]
   },
   {
     id: 4,
-    title: 'Facility Location & Layout',
+    title: 'Facility Location and Layout Planning',
     lectures: 0,
     hours: 0,
     topics: [
-      'Factors Affecting Location Decisions',
-      'Types of Facility Layouts',
-      'Layout Planning Techniques',
-      'Case Study'
+      'Factors affecting facility location decisions',
+      'Types of plant layouts',
+      'Layout optimization techniques',
+      'Hands-on: Layout design case'
     ]
   },
   {
     id: 5,
-    title: 'Work Study & Productivity',
+    title: 'Demand Forecasting and Capacity Planning',
     lectures: 0,
     hours: 0,
     topics: [
-      'Work Measurement',
-      'Method Study',
-      'Productivity Concepts',
-      'Improving Productivity'
+      'Importance of forecasting',
+      'Qualitative and quantitative techniques',
+      'Capacity planning strategies',
+      'Hands-on: Forecasting with data'
     ]
   },
   {
     id: 6,
-    title: 'Demand Forecasting',
-    lectures: 0,
-    hours: 0,
-    topics: [
-      'Qualitative Forecasting Methods',
-      'Quantitative Forecasting Methods',
-      'Moving Averages',
-      'Forecast Accuracy'
-    ]
-  },
-  {
-    id: 7,
-    title: 'Capacity Planning',
-    lectures: 0,
-    hours: 0,
-    topics: [
-      'Capacity Types',
-      'Capacity Planning Strategies',
-      'Break-even Analysis',
-      'Numerical Exercises'
-    ]
-  },
-  {
-    id: 8,
-    title: 'Production Planning & Control',
-    lectures: 0,
-    hours: 0,
-    topics: [
-      'Aggregate Planning',
-      'Master Production Schedule',
-      'Material Requirements Planning (MRP)',
-      'Scheduling Basics'
-    ]
-  },
-  {
-    id: 9,
     title: 'Inventory Management',
     lectures: 0,
     hours: 0,
     topics: [
-      'Types of Inventory',
-      'EOQ Model',
-      'ABC Analysis',
-      'Just-in-Time (JIT)'
+      'Types of inventory and costs',
+      'EOQ and safety stock',
+      'ABC analysis and JIT',
+      'Hands-on: Inventory optimization'
     ]
   },
   {
-    id: 10,
-    title: 'Supply Chain Management',
+    id: 7,
+    title: 'Production Planning and Scheduling',
     lectures: 0,
     hours: 0,
     topics: [
-      'Supply Chain Concepts',
-      'Supplier Selection',
-      'Logistics & Distribution',
-      'Bullwhip Effect'
+      'Aggregate planning strategies',
+      'Master Production Schedule',
+      'Scheduling techniques',
+      'Hands-on: Scheduling exercise'
     ]
   },
   {
-    id: 11,
+    id: 8,
     title: 'Quality Management',
     lectures: 0,
     hours: 0,
     topics: [
-      'Quality Concepts',
-      'Total Quality Management (TQM)',
-      'Six Sigma Basics',
-      'Quality Tools'
+      'Quality concepts and dimensions',
+      'TQM and Six Sigma',
+      'Statistical Process Control',
+      'Hands-on: Control charts'
+    ]
+  },
+  {
+    id: 9,
+    title: 'Supply Chain and Logistics Management',
+    lectures: 0,
+    hours: 0,
+    topics: [
+      'Supply chain design',
+      'Procurement and vendor management',
+      'Logistics and distribution',
+      'Risk management'
+    ]
+  },
+  {
+    id: 10,
+    title: 'Lean Operations and Process Improvement',
+    lectures: 0,
+    hours: 0,
+    topics: [
+      'Lean principles and waste elimination',
+      'Kaizen, 5S, Value Stream Mapping',
+      'Process re-engineering',
+      'Hands-on: Lean project'
+    ]
+  },
+  {
+    id: 11,
+    title: 'Operations Analytics and Technology',
+    lectures: 0,
+    hours: 0,
+    topics: [
+      'Operations analytics',
+      'ERP and automation',
+      'Industry 4.0 concepts',
+      'Hands-on: KPI analysis'
     ]
   },
   {
     id: 12,
-    title: 'Lean Operations & Waste Reduction',
+    title: 'Capstone Project and Review',
     lectures: 0,
     hours: 0,
     topics: [
-      'Principles',
-      'Types of Waste',
-      'Kaizen',
-      'Value Stream Mapping'
-    ]
-  },
-  {
-    id: 13,
-    title: 'Maintenance & Reliability',
-    lectures: 0,
-    hours: 0,
-    topics: [
-      'Types of Maintenance',
-      'Reliability Concepts',
-      'Preventive Maintenance',
-      'TPM'
-    ]
-  },
-  {
-    id: 14,
-    title: 'Project Management',
-    lectures: 0,
-    hours: 0,
-    topics: [
-      'Project Life Cycle',
-      'PERT & CPM',
-      'Project Scheduling',
-      'Risk Management'
-    ]
-  },
-  {
-    id: 15,
-    title: 'Industry Applications & Case Studies',
-    lectures: 0,
-    hours: 0,
-    topics: [
-      'Manufacturing Case Studies',
-      'Service Operations Case Studies',
-      'Hands-on Problems',
-      'Final Review'
+      'Real-world operations project',
+      'Project presentation',
+      'Concept review and Q&A'
     ]
   }
 ];

@@ -56,7 +56,7 @@ export default function NetworkSecurityPage() {
             <CourseHeroWrapper
               courseName="Master Network Security"
               defaultDescription="Master network security fundamentals and advanced techniques. Learn to design, implement, and manage secure network infrastructures. Protect networks from threats and vulnerabilities."
-              defaultImage="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
+              defaultImage="/courses/Network Security.webp"
               price="$85.00"
               chapters={24}
               lessons={72}

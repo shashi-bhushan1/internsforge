@@ -19,7 +19,7 @@ export default function CareersHero() {
           <div className="relative">
             <div className="relative bg-gray-100 rounded-2xl overflow-hidden w-full h-[400px] md:h-[450px]">
               <Image
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
+                src="/careers-hero.jpg"
                 alt="Job opportunities"
                 fill
                 className="object-cover"

@@ -74,28 +74,28 @@ const otherPartners = [
     logo: "/other_partners/iso.webp",
   },
   {
-    name: "Prodesk",
-    logo: "/other_partners/prodesk.webp",
-  },
-  {
-    name: "S-S Innovations",
-    logo: "/other_partners/s-s-innovations.webp",
+    name: "MSME",
+    logo: "/other_partners/msme.webp",
   },
   {
     name: "Startup India",
     logo: "/other_partners/startupIndia.webp",
   },
   {
-    name: "MSME",
-    logo: "/other_partners/msme.webp",
-  },
-  {
     name: "Certango",
     logo: "/other_partners/certango.png",
   },
   {
+    name: "Prodesk",
+    logo: "/other_partners/prodesk.webp",
+  },
+  {
     name: "Faculty Paths",
     logo: "/other_partners/facultypaths.webp",
+  },
+  {
+    name: "S-S Innovations",
+    logo: "/other_partners/s-s-innovations.webp",
   },
 ];
 

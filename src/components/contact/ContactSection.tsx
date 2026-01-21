@@ -59,9 +59,9 @@ export default function ContactSection() {
             <div className="text-center">
               <div className="flex justify-center mb-4">
                 <a 
-                  href="mailto:support@internsforge.com" 
+                  href="mailto:priya@internsforge.com" 
                   className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-orange-50 flex items-center justify-center shadow-sm border border-orange-200 hover:bg-brand-cyan hover:border-brand-cyan transition-all duration-300 cursor-pointer group"
-                  aria-label="Email us at support@internsforge.com"
+                  aria-label="Email us at priya@internsforge.com"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-brand-orange group-hover:text-white transition-colors duration-300">
                     <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="2"/>
@@ -70,8 +70,8 @@ export default function ContactSection() {
                 </a>
               </div>
               <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">Email</h3>
-              <a href="mailto:support@internsforge.com" className="block text-base md:text-lg text-gray-700 hover:text-brand-cyan transition-colors break-all font-medium">
-                support@internsforge.com
+              <a href="mailto:priya@internsforge.com" className="block text-base md:text-lg text-gray-700 hover:text-brand-cyan transition-colors break-all font-medium">
+                priya@internsforge.com
               </a>
             </div>
 

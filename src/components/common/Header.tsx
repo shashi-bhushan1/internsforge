@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { getCourse } from '@/data/courses';
 
 // SVG Icons
 const BrainIcon = () => (
@@ -107,7 +108,18 @@ const generateCourseDescription = (courseName: string): string => {
   if (name.includes('robotics')) {
     return 'Design and program intelligent robots. Learn robotics fundamentals, control systems, and automation technologies.';
   }
-  if (name.includes('engine') || name.includes('electric vehicle') || name.includes('hev') || name.includes('bev')) {
+  // Medical - Check "genetic engineering" BEFORE "engine" to avoid conflicts
+  if (name.includes('genetic engineering')) {
+    return 'Explore medical technologies and healthcare informatics. Learn medical coding, bioinformatics, and genetic engineering applications.';
+  }
+  // Mechanical/Automotive - Check "ic engine" specifically to avoid matching "genetic engineering"
+  if (name.includes('ic engine')) {
+    return 'Understand automotive engineering principles and modern vehicle technologies. Learn about engine systems, electric vehicles, and sustainable transportation.';
+  }
+  if (name.includes('engine') && !name.includes('genetic')) {
+    return 'Understand automotive engineering principles and modern vehicle technologies. Learn about engine systems, electric vehicles, and sustainable transportation.';
+  }
+  if (name.includes('electric vehicle') || name.includes('hev') || name.includes('bev')) {
     return 'Understand automotive engineering principles and modern vehicle technologies. Learn about engine systems, electric vehicles, and sustainable transportation.';
   }
   if (name.includes('drone mechanics') || name.includes('drone')) {
@@ -147,81 +159,112 @@ const generateCourseDescription = (courseName: string): string => {
 const getCourseImage = (courseName: string): string => {
   const name = courseName.toLowerCase();
   
+  // First, try to get the course from courses.ts by matching course names
+  let courseSlug: string | null = null;
+  
+  // Advanced courses
+  if (name.includes('advanced cyber security') || name.includes('advance cyber security')) {
+    return '/courses/Advance Cyber Security.webp';
+  }
+  if (name.includes('network security')) {
+    return '/courses/Network Security.webp';
+  }
+  if (name.includes('full stack web development') && name.includes('mern')) {
+    return '/courses/Full Stack Web Development.webp';
+  }
+  
+  // Map course names to slugs - Check "genetic engineering" BEFORE "ic engine" to avoid conflicts
+  if (name.includes('genetic engineering')) {
+    courseSlug = 'genetic-engineering';
+  } else if (name.includes('artificial intelligence')) {
+    courseSlug = 'artificial-intelligence';
+  } else if (name.includes('machine learning')) {
+    courseSlug = 'machine-learning';
+  } else if (name.includes('data science')) {
+    courseSlug = 'data-science';
+  } else if (name.includes('data analytics')) {
+    courseSlug = 'data-analytics';
+  } else if (name.includes('business analytics')) {
+    courseSlug = 'business-analytics';
+  } else if (name.includes('cloud computing')) {
+    courseSlug = 'cloud-computing';
+  } else if (name.includes('amazon web services') || name.includes('aws')) {
+    courseSlug = 'amazon-web-services';
+  } else if (name.includes('cyber security')) {
+    courseSlug = 'cyber-security';
+  } else if (name.includes('web development') && !name.includes('full stack')) {
+    courseSlug = 'web-development';
+  } else if (name.includes('full stack web development')) {
+    courseSlug = 'full-stack-web-development';
+  } else if (name.includes('programming in python') || (name.includes('python') && !name.includes('data'))) {
+    courseSlug = 'python';
+  } else if (name.includes('programming in java') || (name.includes('java') && !name.includes('script'))) {
+    courseSlug = 'java';
+  } else if (name.includes('data structure') || name.includes('algorithm')) {
+    courseSlug = 'data-structure-algorithm';
+  } else if (name.includes('android')) {
+    courseSlug = 'android-app-development';
+  } else if (name.includes('game development')) {
+    courseSlug = 'game-development';
+  } else if (name.includes('embedded')) {
+    courseSlug = 'embedded-systems';
+  } else if (name.includes('iot') || name.includes('internet of things')) {
+    courseSlug = 'internet-of-things';
+  } else if (name.includes('vlsi')) {
+    courseSlug = 'vlsi';
+  } else if (name.includes('robotics')) {
+    courseSlug = 'robotics';
+  } else if (name.includes('nano')) {
+    courseSlug = 'nano-technology';
+  } else if (name.includes('ic engine')) {
+    courseSlug = 'ic-engine';
+  } else if (name.includes('battery electric') || name.includes('bev')) {
+    courseSlug = 'battery-electric-vehicles';
+  } else if (name.includes('hybrid electrical') || name.includes('hev')) {
+    courseSlug = 'hybrid-electrical-vehicles';
+  } else if (name.includes('drone')) {
+    courseSlug = 'drone-mechanics';
+  } else if (name.includes('autocad')) {
+    courseSlug = 'autocad';
+  } else if (name.includes('construction')) {
+    courseSlug = 'construction-planning';
+  } else if (name.includes('human resources') || name.includes('hr')) {
+    courseSlug = 'human-resources-management';
+  } else if (name.includes('operation management')) {
+    courseSlug = 'operation-management';
+  } else if (name.includes('digital marketing')) {
+    courseSlug = 'digital-marketing';
+  } else if (name.includes('finance') && !name.includes('stock')) {
+    courseSlug = 'finance';
+  } else if (name.includes('stock market')) {
+    courseSlug = 'stock-market';
+  } else if (name.includes('ui/ux') || name.includes('design')) {
+    courseSlug = 'ui-ux-design';
+  } else if (name.includes('medical coding')) {
+    courseSlug = 'medical-coding';
+  } else if (name.includes('bio-informatics') || name.includes('bioinformatics')) {
+    courseSlug = 'bio-informatics';
+  } else if (name.includes('psychology')) {
+    courseSlug = 'psychology';
+  }
+  
+  // Try to get course from courses.ts
+  if (courseSlug) {
+    const course = getCourse(courseSlug);
+    if (course && course.image) {
+      return course.image;
+    }
+  }
+  
+  // Fallback to hardcoded URLs for courses not in courses.ts
   if (name.includes('cyber security') || name.includes('network security')) {
     return 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80';
   }
-  if (name.includes('full stack web development') || name.includes('web development')) {
+  if (name.includes('web development') || name.includes('full stack')) {
     return 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80';
   }
-  if (name.includes('artificial intelligence') || name.includes('machine learning')) {
-    return 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('data science') || name.includes('data analytics') || name.includes('business analytics')) {
-    return 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('cloud computing') || name.includes('aws') || name.includes('amazon web services')) {
-    return 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('python')) {
-    return 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('java')) {
-    return 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('data structure') || name.includes('algorithm')) {
-    return 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('android')) {
-    return 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('game development')) {
-    return 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('embedded') || name.includes('iot') || name.includes('internet of things') || name.includes('vlsi')) {
-    return 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('robotics')) {
-    return 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('nano')) {
-    return 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('engine') || name.includes('ic engine')) {
-    return 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('battery electric') || name.includes('bev')) {
-    return 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('hybrid electrical') || name.includes('hev')) {
-    return 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('drone mechanics') || name.includes('drone')) {
-    return 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('electric vehicle') || name.includes('electrical vehicle')) {
-    return 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('autocad') || name.includes('construction') || name.includes('civil')) {
-    return 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('management') || name.includes('hr') || name.includes('human resources') || name.includes('operation')) {
-    return 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('digital marketing') || name.includes('marketing')) {
-    return 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('finance') || name.includes('stock market') || name.includes('investment')) {
-    return 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('ui/ux') || name.includes('design')) {
-    return 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('medical') || name.includes('coding') || name.includes('bio') || name.includes('genetic')) {
-    return 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80';
-  }
-  if (name.includes('psychology') || name.includes('personality')) {
-    return 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80';
-  }
+  
+  // Default fallback
   return 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80';
 };
 

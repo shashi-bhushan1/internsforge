@@ -33,7 +33,7 @@ export default function ContactPage() {
           "@type": "ContactPoint",
           "telephone": "+91-7019680860",
           "contactType": "Customer Service",
-          "email": "support@internsforge.com",
+          "email": "priya@internsforge.com",
           "areaServed": "IN",
           "availableLanguage": "English"
         },

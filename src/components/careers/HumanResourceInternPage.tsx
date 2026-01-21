@@ -269,6 +269,9 @@ export default function HumanResourceInternPage() {
           <p className="text-red-600 text-sm mt-4 text-center">
             *Drop your resume to: hr@internsforge.com
           </p>
+          <p className="text-gray-700 text-sm mt-2 text-center">
+            For any query, contact at: +917019680860
+          </p>
         </div>
       </div>
     </div>

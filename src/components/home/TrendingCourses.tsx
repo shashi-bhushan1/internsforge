@@ -12,7 +12,11 @@ const getCourseRoute = (title: string): string => {
   if (name.includes('digital marketing')) {
     return '/courses/digital-marketing';
   }
-  if (name.includes('web development') || name.includes('full stack')) {
+  // Check for "full stack" first (more specific) before checking just "web development"
+  if (name.includes('full stack')) {
+    return '/courses/full-stack-web-development';
+  }
+  if (name.includes('web development')) {
     return '/courses/web-development';
   }
   if (name.includes('machine learning')) {
@@ -26,22 +30,22 @@ const getCourseRoute = (title: string): string => {
 const trendingCourses = [
   {
     title: "DATA SCIENCE",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    image: "/courses/Data Science.webp",
     description: "This course will help you learn how to use data and statistical models to make predictions, communicate your findings with a broad range of audiences."
   },
   {
     title: "DIGITAL MARKETING",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    image: "/courses/Digital Marketing.webp",
     description: "This course aims to set a solid foundation for the digital marketing skills required for successful campaigns in the digital world."
   },
   {
     title: "FULL STACK WEB DEVELOPMENT",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    image: "/courses/Full Stack Web Development.webp",
     description: "The Web Development course will teach you how to create web pages, apps, and other online content by using the languages HTML, and CSS."
   },
   {
     title: "MACHINE LEARNING",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
+    image: "/courses/Machine Learning.webp",
     description: "The Machine Learning course will teach you how to leverage data, build models, and create intelligent systems by using tools and techniques."
   }
 ];

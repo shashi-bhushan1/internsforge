@@ -56,7 +56,7 @@ export default function AdvanceCyberSecurityPage() {
             <CourseHeroWrapper
               courseName="Advanced Cyber Security"
               defaultDescription="Master advanced cybersecurity concepts and techniques. Learn ethical hacking, network security, threat management, and implement robust defense strategies to protect digital assets."
-              defaultImage="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
+              defaultImage="/courses/Advance Cyber Security.webp"
               price="$85.00"
               chapters={24}
               lessons={72}

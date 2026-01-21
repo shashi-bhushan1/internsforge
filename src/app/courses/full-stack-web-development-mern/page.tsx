@@ -56,7 +56,7 @@ export default function FullStackWebDevelopmentMERNPage() {
             <CourseHeroWrapper
               courseName="Full Stack Web Development (MERN)"
               defaultDescription="Master the complete MERN stack - MongoDB, Express.js, React, and Node.js. Build full-stack applications from scratch, learn modern development practices, and create scalable web solutions."
-              defaultImage="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+              defaultImage="/courses/Full Stack Web Development.webp"
               price="$85.00"
               chapters={14}
               lessons={84}

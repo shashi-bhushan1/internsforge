@@ -293,7 +293,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
-                    href="https://wa.me/917019680860" 
+                    href="https://wa.me/916361187682" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-sm text-gray-300 hover:text-brand-cyan transition-colors"
@@ -303,7 +303,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
-                    href="tel:+917019680860" 
+                    href="tel:+916361187682" 
                     className="text-sm text-gray-300 hover:text-brand-cyan transition-colors"
                   >
                     Phone
@@ -315,7 +315,7 @@ export default function Footer() {
             {/* Fourth Column: Address & Contact */}
             <div className="space-y-4 sm:col-span-2 lg:col-span-1">
               <div>
-                <h4 className="font-semibold mb-2">Address</h4>
+                <h3 className="text-lg md:text-xl font-bold mb-4">Address</h3>
                 <p className="text-sm text-gray-300 leading-5 mb-4">
                   Rudhra Coworks, 126, RNS Plaza, KIADB Industrial Area, 1, near Tech Mahindra Gate, next to Hyderabad Magic, Phase II, Bengaluru, Karnataka 560100
                 </p>
@@ -333,7 +333,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8 mb-8">
             {mainCategories.map(([categoryName, courses]) => (
               <div key={categoryName}>
-                <h4 className="text-base font-bold mb-3 border-b border-gray-700 pb-2">{categoryName}</h4>
+                <h4 className="text-base font-bold mb-3 border-b border-gray-700 pb-2 whitespace-nowrap">{categoryName}</h4>
                 <ul className="space-y-2">
                   {/* Special handling for Computer Science / IT */}
                   {categoryName === 'Computer Science / IT' ? (
@@ -379,7 +379,7 @@ export default function Footer() {
             {/* Advanced Courses Column */}
             {coursesByCategory['Advanced'] && (
               <div>
-                <h4 className="text-base font-bold mb-3 border-b border-gray-700 pb-2">Advanced Courses</h4>
+                <h4 className="text-base font-bold mb-3 border-b border-gray-700 pb-2 whitespace-nowrap">Advanced Courses</h4>
                 <ul className="space-y-2">
                   {coursesByCategory['Advanced'].map((course, index) => (
                     <li key={index}>
