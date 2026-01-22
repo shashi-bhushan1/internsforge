@@ -177,23 +177,21 @@ export default function Hero() {
             <h3 className="text-xl sm:text-2xl font-bold text-brand-orange mb-3">
               Our Services
             </h3>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               {services.map((service) => (
                 <div
                   key={service.title}
-                  className="rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 p-3 flex flex-col gap-2"
+                  className="rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 p-3 flex flex-col gap-2 flex-1"
                 >
-                  <div className="flex items-center justify-start">
+                  <div className="flex items-center gap-2">
                     {service.icon}
-                  </div>
-                  <div className="space-y-1 text-left">
                     <p className="text-sm sm:text-[15px] font-bold text-gray-900">
                       {service.title}
                     </p>
-                    <p className="text-[11px] sm:text-[12px] text-gray-600 leading-4">
-                      {service.description}
-                    </p>
                   </div>
+                  <p className="text-[11px] sm:text-[12px] text-gray-600 leading-4">
+                    {service.description}
+                  </p>
                 </div>
               ))}
             </div>

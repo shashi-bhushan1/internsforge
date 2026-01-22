@@ -89,11 +89,11 @@ export default function StudentTestimonials() {
           {/* Left Navigation Arrow */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 sm:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors shadow-lg"
+            className="absolute left-0 sm:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center hover:border-brand-orange hover:bg-gray-50 transition-all shadow-lg group"
             aria-label="Previous review"
           >
             <svg width="16" height="16" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 18L9 12L15 6" stroke="gray" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-brand-orange transition-colors"/>
             </svg>
           </button>
 
@@ -158,11 +158,11 @@ export default function StudentTestimonials() {
           {/* Right Navigation Arrow */}
           <button
             onClick={nextSlide}
-            className="absolute right-0 sm:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors shadow-lg"
+            className="absolute right-0 sm:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center hover:border-brand-orange hover:bg-gray-50 transition-all shadow-lg group"
             aria-label="Next review"
           >
             <svg width="16" height="16" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 18L15 12L9 6" stroke="gray" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-brand-orange transition-colors"/>
             </svg>
           </button>
         </div>

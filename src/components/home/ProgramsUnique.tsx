@@ -51,7 +51,7 @@ export default function ProgramsUnique() {
           </div>
 
           {/* Right Section - Circular Image */}
-          <div className="flex justify-center lg:justify-start mr-0 md:mr-1 mt-6 lg:mt-0">
+          <div className="flex justify-center mt-6 lg:mt-0">
             <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px]">
               <div className="absolute inset-0 rounded-full border-15 md:border-20 border-brand-orange"></div>
               <div className="absolute inset-[15px] md:inset-[20px] rounded-full bg-gray-200 overflow-hidden">

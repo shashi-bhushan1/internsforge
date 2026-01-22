@@ -9,27 +9,27 @@ const faqs = [
   },
   {
     question: "What Should I Do If I Don't Receive The Class Link?",
-    answer: "If you don't receive the class link, please check your spam folder first. If it's still not there, contact our support team via email or WhatsApp, and we'll send you the link immediately."
+    answer: "Please check your spam or junk folder first. If you still can't find the link, feel free to contact us via email at support@internsforge.com or call us at +916361187682."
   },
   {
     question: "How Do I Access My LMS Portal?",
-    answer: "You can access your LMS portal by logging in with your registered email and password. The login credentials will be sent to your email after enrollment. If you face any issues, contact our support team."
+    answer: "You will receive access to the LMS portal during the first week of the starting month. To create your account, just follow the instructions sent to you via email/WhatsApp."
   },
   {
     question: "How Do I Submit My Projects?",
-    answer: "You can submit your projects through the LMS portal. Navigate to the 'Projects' section, select the project you want to submit, upload your files, and click submit. Make sure to follow the submission guidelines provided."
+    answer: "You will receive an email about your project submission. Click on the \"Submit Project\" button in the email, which will redirect you to a page where you can upload your project as a PDF file or provide a drive link."
   },
   {
     question: "Will I Have Access To The Recorded Sessions I Missed?",
-    answer: "Yes, all recorded sessions are available in your LMS portal. You can access them anytime after the live session ends. Recordings are typically available within 24 hours of the live session."
+    answer: "Yes, you can access the recorded sessions you missed. Just log in to the LMS portal, go to the menu section, and then to the dashboard where you will find the recorded sessions."
   },
   {
     question: "Who Would Be The Mentors Of Our Programs?",
-    answer: "Our programs are led by industry experts and experienced professionals with years of real-world experience. All mentors are carefully selected based on their expertise and teaching abilities to ensure the best learning experience."
+    answer: "You will be mentored by top professionals from leading MNCs who will provide you with exceptional training, a valuable learning experience, and industry insights."
   },
   {
     question: "When Will I Get My Certificate?",
-    answer: "Certificates are issued upon successful completion of the program, including all assignments and projects. You'll receive your certificate via email within 7-10 business days after program completion."
+    answer: "You will receive your completion certificate after finishing the course and submitting your projects."
   }
 ];
 
@@ -97,7 +97,7 @@ export default function FAQ() {
                     openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-4 sm:px-6 pb-3 sm:pb-4 text-gray-700 text-xs sm:text-sm md:text-base leading-5 sm:leading-6">
+                  <div className="px-4 sm:px-6 pb-3 sm:pb-4 text-gray-700 text-sm leading-5">
                     {faq.answer}
                   </div>
                 </div>

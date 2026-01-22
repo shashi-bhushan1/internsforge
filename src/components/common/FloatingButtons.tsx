@@ -1,11 +1,43 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function FloatingButtons() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const checkModalState = () => {
+      // Check if body overflow is hidden (modal is open)
+      setIsModalOpen(document.body.style.overflow === 'hidden');
+    };
+
+    // Check initially
+    checkModalState();
+
+    // Watch for changes to body style
+    const observer = new MutationObserver(checkModalState);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['style']
+    });
+
+    // Also check periodically as a fallback
+    const interval = setInterval(checkModalState, 100);
+
+    return () => {
+      observer.disconnect();
+      clearInterval(interval);
+    };
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Hide buttons when modal is open
+  if (isModalOpen) {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 flex flex-col gap-3 sm:gap-4 z-50">

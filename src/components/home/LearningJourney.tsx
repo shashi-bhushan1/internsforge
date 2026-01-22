@@ -202,11 +202,11 @@ export default function LearningJourney() {
           {showLeftArrow && (
             <button
               onClick={scrollLeft}
-              className="absolute left-[-16px] sm:left-[-20px] md:left-[-24px] top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-gray-200"
+              className="absolute left-[-16px] sm:left-[-20px] md:left-[-24px] top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 border-2 border-gray-300 hover:border-brand-orange hover:bg-gray-50 group"
               aria-label="Scroll left"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="#1b0905" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 18L9 12L15 6" stroke="gray" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-brand-orange transition-colors"/>
               </svg>
             </button>
           )}
@@ -215,11 +215,11 @@ export default function LearningJourney() {
           {showRightArrow && (
             <button
               onClick={scrollRight}
-              className="absolute right-[-16px] sm:right-[-20px] md:right-[-24px] top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 border border-gray-200"
+              className="absolute right-[-16px] sm:right-[-20px] md:right-[-24px] top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 border-2 border-gray-300 hover:border-brand-orange hover:bg-gray-50 group"
               aria-label="Scroll right"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="#1b0905" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9 18L15 12L9 6" stroke="gray" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-brand-orange transition-colors"/>
               </svg>
             </button>
           )}

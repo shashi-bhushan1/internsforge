@@ -73,7 +73,7 @@ const usefulLinks = [
   "Contact Us",
   "Privacy Policy",
   "Terms & Conditions",
-  "Return policy",
+  "Refund Policy",
   "Careers"
 ];
 
@@ -250,7 +250,7 @@ export default function Footer() {
                   else if (link === "Careers") href = "/careers";
                   else if (link === "Privacy Policy") href = "/privacy-policy";
                   else if (link === "Terms & Conditions") href = "/terms-and-conditions";
-                  else if (link === "Return policy" || link === "Return Policy") href = "/return-policy";
+                  else if (link === "Refund Policy" || link === "Refund policy") href = "/return-policy";
 
                   return (
                     <li key={index}>

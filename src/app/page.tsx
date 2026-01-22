@@ -5,7 +5,6 @@ import Hero from "@/components/home/Hero";
 import CertificationPartners from "@/components/home/CertificationPartners";
 import EducationalAlliances from "@/components/home/EducationalAlliances";
 import ProgramsUnique from "@/components/home/ProgramsUnique";
-import ComboPacks from "@/components/home/ComboPacks";
 import TrendingCourses from "@/components/home/TrendingCourses";
 import TopFeaturedCourses from "@/components/home/TopFeaturedCourses";
 import WhyChooseUs from "@/components/common/WhyChooseUs";
@@ -73,7 +72,6 @@ export default function Home() {
         <CertificationPartners />
         <EducationalAlliances />
         <ProgramsUnique />
-        <ComboPacks />
         <TrendingCourses />
         <TopFeaturedCourses />
         <WhyChooseUs />

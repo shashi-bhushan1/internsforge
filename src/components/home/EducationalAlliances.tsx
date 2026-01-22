@@ -1,139 +1,64 @@
 import React from 'react';
+import Image from 'next/image';
 
 const educationalPartners = [
+  // Row 1: 4 logos
   {
-    name: "VELS",
-    logo: (
-      <div className="flex flex-col items-center gap-1 p-2 bg-yellow-50 rounded-lg h-full justify-center overflow-hidden">
-        <div className="flex items-center gap-2">
-          <div className="w-12 h-14 bg-yellow-200 rounded flex flex-col items-center justify-center p-1">
-            <div className="w-8 h-6 bg-yellow-300 rounded mb-1"></div>
-            <div className="w-6 h-1 bg-yellow-400 rounded"></div>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-blue-700 font-bold text-sm">VELS</span>
-            <div className="w-8 h-8 bg-yellow-300 rounded-full flex items-center justify-center mt-1">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <circle cx="8" cy="6" r="2.5" fill="#8B5A2B"/>
-                <path d="M4 13C4 10.5 5.5 9 8 9C10.5 9 12 10.5 12 13" stroke="#8B5A2B" strokeWidth="1"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
+    name: "VTU",
+    logo: "/co-creating/vtu.png",
+    bgColor: "bg-yellow-100",
   },
   {
-    name: "MAITREYI COLLEGE",
-    logo: (
-      <div className="flex flex-col items-center gap-1 p-2 bg-green-50 rounded-lg h-full justify-center overflow-hidden">
-        <div className="text-center text-[9px] text-gray-800 mb-1">
-          <div className="font-bold">MAITREYI COLLEGE</div>
-          <div className="text-[8px]">University of Delhi</div>
-          <div className="text-[7px] mt-0.5">NAAC A++</div>
-        </div>
-        <div className="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center border-2 border-pink-400">
-          <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center">
-            <span className="text-pink-800 font-bold text-[9px]">MC</span>
-          </div>
-        </div>
-      </div>
-    ),
+    name: "ISO",
+    logo: "/co-creating/iso.png",
+    bgColor: "bg-green-100",
   },
   {
-    name: "IVB",
-    logo: (
-      <div className="flex flex-col items-center gap-1.5 p-2 bg-purple-50 rounded-lg h-full justify-center overflow-hidden">
-        <div className="w-14 h-14 bg-purple-200 rounded-lg flex items-center justify-center">
-          <span className="text-purple-800 font-bold text-lg">IVB</span>
-        </div>
-      </div>
-    ),
+    name: "AICTE",
+    logo: "/co-creating/aicte.png",
+    bgColor: "bg-purple-100",
   },
+  {
+    name: "Oxford",
+    logo: "/co-creating/oxford.png",
+    bgColor: "bg-blue-100",
+  },
+  // Row 2: 3 logos
   {
     name: "unstop",
-    logo: (
-      <div className="flex flex-col items-center gap-1.5 p-2 bg-pink-50 rounded-lg h-full justify-center overflow-hidden">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-sm">u</span>
-          </div>
-          <span className="text-blue-600 font-bold text-sm lowercase">unstop</span>
-        </div>
-      </div>
-    ),
+    logo: "/co-creating/unstop.png",
+    bgColor: "bg-pink-100",
   },
   {
-    name: "DRONA AVIATION",
-    logo: (
-      <div className="flex flex-col items-center gap-1 p-2 bg-blue-50 rounded-lg h-full justify-center overflow-hidden">
-        <div className="flex items-center gap-0.5">
-          <span className="text-black font-bold text-lg">DR</span>
-          <div className="w-7 h-7 rounded-full border-2 border-black flex items-center justify-center relative">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-1.5 h-1.5 bg-black rounded-full"></div>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-1.5 h-1.5 bg-black rounded-full"></div>
-            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-1.5 h-1.5 bg-black rounded-full"></div>
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1 w-1.5 h-1.5 bg-black rounded-full"></div>
-          </div>
-          <span className="text-black font-bold text-lg">NA</span>
-        </div>
-        <span className="text-black font-bold text-xs uppercase">AVIATION</span>
-      </div>
-    ),
+    name: "Mindenious",
+    logo: "/co-creating/mindenious.png",
+    bgColor: "bg-cyan-50",
   },
   {
-    name: "JIGYASA UNIVERSITY",
-    logo: (
-      <div className="flex flex-col items-center gap-1 p-2 bg-gray-100 rounded-lg h-full justify-center overflow-hidden">
-        <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-yellow-500 rounded-full flex items-center justify-center border-2 border-blue-700">
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-            <span className="text-blue-800 font-bold text-[10px]">JU</span>
-          </div>
-        </div>
-        <span className="text-gray-800 font-bold text-[9px] text-center leading-tight">JIGYASA</span>
-      </div>
-    ),
+    name: "YHills",
+    logo: "/co-creating/yhills.png",
+    bgColor: "bg-gray-200",
+  },
+  // Row 3: 4 logos
+  {
+    name: "apna",
+    logo: "/co-creating/apna.png",
+    bgColor: "bg-emerald-50",
   },
   {
-    name: "masai.",
-    logo: (
-      <div className="flex flex-col items-center gap-1.5 p-2 bg-white rounded-lg h-full border border-gray-200 justify-center overflow-hidden">
-        <span className="text-black font-bold text-xl lowercase">masai.</span>
-      </div>
-    ),
+    name: "indeed",
+    logo: "/co-creating/indeed.png",
+    bgColor: "bg-slate-50",
   },
   {
-    name: "Akshara",
-    logo: (
-      <div className="flex flex-col items-center gap-1.5 p-2 bg-white rounded-lg h-full border border-gray-200 justify-center overflow-hidden">
-        <div className="relative w-12 h-12">
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-green-500 rounded-lg transform rotate-45"></div>
-          <div className="absolute inset-1.5 bg-white rounded flex items-center justify-center">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L15 8L22 10L15 12L12 18L9 12L2 10L9 8L12 2Z" fill="#22C55E"/>
-            </svg>
-          </div>
-        </div>
-        <div className="text-center text-[9px] leading-tight">
-          <div className="text-orange-500 font-bold">Akshara</div>
-          <div className="text-gray-600 text-[8px]">The power of knowledge</div>
-        </div>
-      </div>
-    ),
+    name: "Internshala",
+    logo: "/co-creating/internshala.png",
+    bgColor: "bg-indigo-50",
   },
   {
-    name: "NSB NAAC Grade A",
-    logo: (
-      <div className="flex flex-col items-center gap-1 p-2 bg-white rounded-lg h-full border border-gray-200 justify-center overflow-hidden">
-        <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-          <span className="text-white font-bold text-xs">NSB</span>
-        </div>
-        <div className="text-center">
-          <div className="text-gray-800 font-bold text-[9px]">NAAC GRADE A</div>
-          <div className="text-gray-600 text-[8px]">Accredited B-school</div>
-        </div>
-      </div>
-    ),
+    name: "LinkedIn",
+    logo: "/co-creating/linkedin.png",
+    bgColor: "bg-blue-50",
   },
 ];
 
@@ -167,12 +92,61 @@ export default function EducationalAlliances() {
             </div>
 
             {/* Right Panel - Partner Logos Grid */}
-            <div className="grid grid-cols-3 gap-2 md:gap-2 mr-0 md:mr-8 lg:mr-16 ml-0 md:ml-6 lg:ml-12">
-              {educationalPartners.map((partner, index) => (
-                <div key={index} className="w-full max-w-[104px] aspect-square mx-auto">
-                  {partner.logo}
-                </div>
-              ))}
+            <div className="flex flex-col gap-2 md:gap-2 mr-0 md:mr-8 lg:mr-16 ml-0 md:ml-6 lg:ml-12">
+              {/* Row 1: 4 logos */}
+              <div className="grid grid-cols-4 gap-2 md:gap-2">
+                {educationalPartners.slice(0, 4).map((partner, index) => (
+                  <div 
+                    key={index} 
+                    className={`w-full max-w-[104px] aspect-square mx-auto rounded-lg border border-gray-200 ${partner.bgColor} p-2 flex items-center justify-center overflow-hidden`}
+                  >
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={104}
+                      height={104}
+                      className="w-full h-full object-contain"
+                      unoptimized
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* Row 2: 3 logos */}
+              <div className="grid grid-cols-3 gap-2 md:gap-2 max-w-[312px] mx-auto">
+                {educationalPartners.slice(4, 7).map((partner, index) => (
+                  <div 
+                    key={index + 4} 
+                    className={`w-full max-w-[104px] aspect-square mx-auto rounded-lg border border-gray-200 ${partner.bgColor} p-2 flex items-center justify-center overflow-hidden`}
+                  >
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={104}
+                      height={104}
+                      className="w-full h-full object-contain"
+                      unoptimized
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* Row 3: 4 logos */}
+              <div className="grid grid-cols-4 gap-2 md:gap-2">
+                {educationalPartners.slice(7, 11).map((partner, index) => (
+                  <div 
+                    key={index + 7} 
+                    className={`w-full max-w-[104px] aspect-square mx-auto rounded-lg border border-gray-200 ${partner.bgColor} p-2 flex items-center justify-center overflow-hidden`}
+                  >
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={104}
+                      height={104}
+                      className="w-full h-full object-contain"
+                      unoptimized
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -180,4 +154,3 @@ export default function EducationalAlliances() {
     </section>
   );
 }
-

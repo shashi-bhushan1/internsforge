@@ -11,7 +11,7 @@ export default function CourseKeyBenefits({
 }: CourseKeyBenefitsProps) {
   const benefits = [
     {
-      title: "1 Year Course Access",
+      title: "12 Months Unlimited Course Access",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -22,7 +22,7 @@ export default function CourseKeyBenefits({
       )
     },
     {
-      title: "Live Mentorship by Experts",
+      title: "Live Mentorship by Industry Experts",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="8" r="4"/>
@@ -31,7 +31,16 @@ export default function CourseKeyBenefits({
       )
     },
     {
-      title: "Internship Certificate",
+      title: "Course Completion Certificate",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 2L4 7V11C4 16.55 7.16 21.74 12 23C16.84 21.74 20 16.55 20 11V7L12 2Z"/>
+          <path d="M9 12L11 14L15 10"/>
+        </svg>
+      )
+    },
+    {
+      title: "Internship Experience Certificate",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <rect x="4" y="6" width="16" height="12" rx="2"/>
@@ -40,7 +49,7 @@ export default function CourseKeyBenefits({
       )
     },
     {
-      title: `${capstoneProjects} Capstone Projects`,
+      title: "Project Completion Certificate",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
@@ -50,16 +59,25 @@ export default function CourseKeyBenefits({
       )
     },
     {
-      title: "Course Completion Certificate",
+      title: "Certificate of Appreciation for Outstanding Performance",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 2L4 7V11C4 16.55 7.16 21.74 12 23C16.84 21.74 20 16.55 20 11V7L12 2Z"/>
-          <path d="M12 8V16M8 12H16"/>
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
         </svg>
       )
     },
     {
-      title: "Placement Support",
+      title: `${capstoneProjects}+ Industry-Based Capstone Projects`,
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+          <path d="M2 17L12 22L22 17"/>
+          <path d="M2 12L12 17L22 12"/>
+        </svg>
+      )
+    },
+    {
+      title: "Career Guidance & Placement Assistance",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="8" r="4"/>
@@ -72,36 +90,102 @@ export default function CourseKeyBenefits({
   return (
     <section className="bg-brand-page py-8 md:py-12 px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 lg:items-center">
-          {/* Left Side - Title and Description */}
-          <div className="lg:max-w-[420px] lg:shrink-0 w-full">
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900 mb-5 md:mb-6 tracking-tight text-center">
-              <span className="block whitespace-nowrap">What Makes Learning</span>
-              <span className="block mt-3 md:mt-4 whitespace-nowrap">With Us Different</span>
+        {/* Bento Grid Layout - 4 columns on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-fr">
+          
+          {/* Top Row - 2 small cards */}
+          <div
+            className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 hover:border-brand-orange hover:shadow-md transition-all flex flex-col items-center text-center justify-center min-h-[120px] md:min-h-[140px]"
+          >
+            <div className="shrink-0 text-brand-orange mb-3">
+              {benefits[0].icon}
+            </div>
+            <h3 className="text-xs md:text-sm font-semibold text-gray-900 leading-tight">
+              {benefits[0].title}
+            </h3>
+          </div>
+
+          <div
+            className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 hover:border-brand-orange hover:shadow-md transition-all flex flex-col items-center text-center justify-center min-h-[120px] md:min-h-[140px]"
+          >
+            <div className="shrink-0 text-brand-orange mb-3">
+              {benefits[1].icon}
+            </div>
+            <h3 className="text-xs md:text-sm font-semibold text-gray-900 leading-tight">
+              {benefits[1].title}
+            </h3>
+          </div>
+
+          {/* Center Card - Heading and Description (spans 2 columns, 2 rows) */}
+          <div className="col-span-1 sm:col-span-2 lg:col-span-2 row-span-2 bg-white border border-gray-200 rounded-lg p-6 md:p-8 lg:p-10 flex flex-col justify-center items-center text-center min-h-[280px] md:min-h-[320px]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900 mb-4 md:mb-6 tracking-tight">
+              <span className="block">What Makes Learning</span>
+              <span className="block mt-2 md:mt-3">With Us Different</span>
             </h2>
-            <p className="text-base md:text-lg text-gray-700 leading-relaxed text-center">
+            <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed max-w-md">
               This comprehensive course gives you everything you need to master your skills, build real-world projects, and advance your career — all in one place.
             </p>
           </div>
 
-          {/* Right Side - Benefits Cards Grid (2 columns, 3 rows) */}
-          <div className="flex-1 w-full max-w-[500px] lg:ml-auto lg:shrink-0">
-            <div className="grid grid-cols-2 gap-3">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 hover:border-brand-orange hover:shadow-md transition-all flex flex-col items-center text-center min-h-[120px] md:min-h-[140px] justify-center"
-                >
-                  <div className="shrink-0 text-brand-orange mb-3">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xs md:text-sm font-semibold text-gray-900">
-                    {benefit.title}
-                  </h3>
-                </div>
-              ))}
+          {/* Right side top - 2 small cards stacked */}
+          <div
+            className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 hover:border-brand-orange hover:shadow-md transition-all flex flex-col items-center text-center justify-center min-h-[120px] md:min-h-[140px]"
+          >
+            <div className="shrink-0 text-brand-orange mb-3">
+              {benefits[2].icon}
             </div>
+            <h3 className="text-xs md:text-sm font-semibold text-gray-900 leading-tight">
+              {benefits[2].title}
+            </h3>
           </div>
+
+          <div
+            className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 hover:border-brand-orange hover:shadow-md transition-all flex flex-col items-center text-center justify-center min-h-[120px] md:min-h-[140px]"
+          >
+            <div className="shrink-0 text-brand-orange mb-3">
+              {benefits[3].icon}
+            </div>
+            <h3 className="text-xs md:text-sm font-semibold text-gray-900 leading-tight">
+              {benefits[3].title}
+            </h3>
+          </div>
+
+          {/* Bottom Row - Left side cards */}
+          <div
+            className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 hover:border-brand-orange hover:shadow-md transition-all flex flex-col items-center text-center justify-center min-h-[120px] md:min-h-[140px]"
+          >
+            <div className="shrink-0 text-brand-orange mb-3">
+              {benefits[4].icon}
+            </div>
+            <h3 className="text-xs md:text-sm font-semibold text-gray-900 leading-tight">
+              {benefits[4].title}
+            </h3>
+          </div>
+
+          {/* Bottom Row - Wide card for Career Guidance (spans 2 columns) */}
+          <div
+            className="col-span-1 sm:col-span-2 bg-white border border-gray-200 rounded-lg p-4 md:p-5 hover:border-brand-orange hover:shadow-md transition-all flex flex-col items-center text-center justify-center min-h-[120px] md:min-h-[140px]"
+          >
+            <div className="shrink-0 text-brand-orange mb-3">
+              {benefits[7].icon}
+            </div>
+            <h3 className="text-xs md:text-sm font-semibold text-gray-900 leading-tight">
+              {benefits[7].title}
+            </h3>
+          </div>
+
+          {/* Bottom Row - Right side card */}
+          <div
+            className="bg-white border border-gray-200 rounded-lg p-4 md:p-5 hover:border-brand-orange hover:shadow-md transition-all flex flex-col items-center text-center justify-center min-h-[120px] md:min-h-[140px]"
+          >
+            <div className="shrink-0 text-brand-orange mb-3">
+              {benefits[6].icon}
+            </div>
+            <h3 className="text-xs md:text-sm font-semibold text-gray-900 leading-tight">
+              {benefits[6].title}
+            </h3>
+          </div>
+
         </div>
       </div>
     </section>

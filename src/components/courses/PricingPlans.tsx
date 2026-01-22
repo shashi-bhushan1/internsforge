@@ -65,11 +65,11 @@ export default function PricingPlans({
     }
   };
   return (
-    <section id="pricing-plans" className="bg-brand-page py-8 md:py-16 pb-16 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px] scroll-mt-32 md:scroll-mt-36">
+    <section id="pricing-plans" className="bg-brand-page py-6 md:py-10 pb-10 md:pb-14 px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px] scroll-mt-32 md:scroll-mt-36">
       <div className="max-w-[1600px] mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-8 md:mb-12">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900 mb-3 md:mb-4">
+        <div className="text-center mb-6 md:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-gray-900 mb-2 md:mb-3">
             Choose the Learning Path That Fits You Best
           </h1>
           <p className="text-sm sm:text-base text-gray-700 max-w-3xl mx-auto px-4">
@@ -78,7 +78,7 @@ export default function PricingPlans({
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto justify-items-center pb-8">
+        <div className="grid md:grid-cols-2 gap-5 md:gap-6 max-w-3xl mx-auto justify-items-center pb-4">
           {defaultPlans.map((plan) => {
             // Determine which payment link and price to use
             const paymentLink = plan.id === 1 ? selfPacedLink : mentorLedLink;
@@ -101,36 +101,36 @@ export default function PricingPlans({
                 )}
 
                 {/* Content */}
-                <div className="px-6 py-6 flex flex-col flex-1 min-h-0">
+                <div className="px-5 py-5 flex flex-col flex-1 min-h-0">
                   {/* Title */}
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 text-center">
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 text-center">
                     {plan.title}
                   </h2>
                   
                   {/* Subtitle */}
-                  <p className="text-sm md:text-base text-gray-700 text-center mb-4">
+                  <p className="text-xs md:text-sm text-gray-700 text-center mb-4">
                     {plan.subtitle}
                   </p>
 
                   {/* Price Section */}
-                  <div className="text-center mb-6">
+                  <div className="text-center mb-5">
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-gray-900 text-3xl md:text-4xl font-bold">
+                      <span className="text-gray-900 text-2xl md:text-3xl font-bold">
                         {displayPrice}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-600 mt-2">
+                    <p className="text-xs text-gray-600 mt-1.5">
                       {plan.paymentType}
                     </p>
                   </div>
 
                   {/* Features List */}
-                  <div className="space-y-3 flex-1 mb-6 min-h-0">
+                  <div className="space-y-2.5 flex-1 mb-5 min-h-0">
                     {plan.features.map((feature, index) => (
                       <div key={index} className="flex items-start gap-2">
                         {feature.included ? (
                           <svg
-                            className="w-5 h-5 text-green-600 shrink-0 mt-0.5"
+                            className="w-4 h-4 text-green-600 shrink-0 mt-0.5"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
@@ -138,7 +138,7 @@ export default function PricingPlans({
                           </svg>
                         ) : (
                           <svg
-                            className="w-5 h-5 text-red-600 shrink-0 mt-0.5"
+                            className="w-4 h-4 text-red-600 shrink-0 mt-0.5"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -152,7 +152,7 @@ export default function PricingPlans({
                           </svg>
                         )}
                         <span
-                          className={`text-sm md:text-base flex-1 ${
+                          className={`text-xs md:text-sm flex-1 leading-tight ${
                             feature.included ? 'text-gray-900' : 'text-gray-500'
                           }`}
                         >
@@ -167,7 +167,7 @@ export default function PricingPlans({
                     <button 
                       onClick={() => handlePaymentClick(paymentLink)}
                       disabled={!paymentLink}
-                      className={`w-full font-semibold py-3 md:py-3.5 rounded-full transition-colors text-sm md:text-base shadow-sm ${
+                      className={`w-full font-semibold py-2.5 md:py-3 rounded-full transition-colors text-xs md:text-sm shadow-sm ${
                         paymentLink
                           ? 'bg-brand-orange text-white hover:bg-brand-cyan cursor-pointer'
                           : 'bg-gray-400 text-white cursor-not-allowed opacity-60'
