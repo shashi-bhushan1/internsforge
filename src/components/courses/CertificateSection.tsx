@@ -204,7 +204,7 @@ export default function CertificateSection() {
             {/* Full Certificate Image */}
             <div 
               className="relative bg-white rounded-lg shadow-2xl flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
               style={{ 
                 maxHeight: selectedCert.id === 1 
                   ? 'calc(100vh - 2rem - 100px)' // Reduced by 100px (50px top + 50px bottom) for Certificate of Appreciation
@@ -213,21 +213,21 @@ export default function CertificateSection() {
                 width: 'fit-content',
                 height: 'fit-content'
               }}
-            >
+          >
               {/* Close Button - Outside Certificate, 12px from top-right corner */}
-              <button
-                onClick={closeZoom}
+            <button
+              onClick={closeZoom}
                 className="absolute z-10 w-12 h-12 bg-brand-orange hover:bg-brand-cyan rounded-full flex items-center justify-center transition-colors shadow-lg"
                 style={{ 
                   top: 'calc(-48px - 12px)', 
                   right: 'calc(-48px - 12px)' 
                 }}
-                aria-label="Close"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+              aria-label="Close"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
               <Image
                 src={selectedCert.image}
                 alt={selectedCert.title}

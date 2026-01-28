@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Refund Policy - InternsForge",
     description: "Read InternsForge's Refund Policy to understand our cancellation and refund terms.",
-    url: "https://internsforge.com/return-policy",
+    url: "https://internsforge.com/refund-policy",
   },
   twitter: {
     title: "Refund Policy - InternsForge",
@@ -22,7 +22,7 @@ export default function RefundPolicyPage() {
     "@type": "WebPage",
     "name": "Refund Policy",
     "description": "Refund Policy for InternsForge Edutech LLP",
-    "url": "https://internsforge.com/return-policy",
+    "url": "https://internsforge.com/refund-policy",
   };
 
   return (

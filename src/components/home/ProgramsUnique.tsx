@@ -22,7 +22,7 @@ export default function ProgramsUnique() {
     }
   };
   return (
-    <section className="bg-brand-page py-8 md:py-16 px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px]">
+    <section className="bg-brand-page py-6 md:py-12 px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px]">
       <div className="max-w-[1600px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center m-0 border-0 p-3 md:p-5">
           {/* Left Section - Text Content */}
@@ -50,19 +50,16 @@ export default function ProgramsUnique() {
             </div>
           </div>
 
-          {/* Right Section - Circular Image */}
+          {/* Right Section - Image */}
           <div className="flex justify-center mt-6 lg:mt-0">
-            <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px]">
-              <div className="absolute inset-0 rounded-full border-15 md:border-20 border-brand-orange"></div>
-              <div className="absolute inset-[15px] md:inset-[20px] rounded-full bg-gray-200 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-                  alt="Professional student with tablet"
-                  width={310}
-                  height={310}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="relative w-[340px] h-[340px] sm:w-[430px] sm:h-[430px] md:w-[520px] md:h-[520px]">
+              <Image
+                src="/discover-home.webp"
+                alt="Discover what makes our programs unique"
+                width={520}
+                height={520}
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>

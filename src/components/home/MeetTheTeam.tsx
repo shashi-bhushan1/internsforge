@@ -30,14 +30,14 @@ const teamMembers = [
     company: "Infosys",
     designation: "Software Testing",
     image: "/mentors/Keshav.webp",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/keshav-chaudhary-48954a160/"
   },
   {
     name: "Rajneesh Kumar",
     company: "Infosys Ltd",
     designation: "Fullstack Web Development",
     image: "/mentors/Rajneesh Kumar.webp",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/raj4044/"
   },
   {
     name: "Archanashree",
@@ -51,35 +51,35 @@ const teamMembers = [
     company: "Cognizant",
     designation: "DSA and Programming in Python",
     image: "/mentors/Kajal Jha.webp",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/kajal-jha-b1a404131/"
   },
   {
     name: "Chetan Vijay",
     company: "TCS",
     designation: "Programming in Java",
     image: "/mentors/Chetan Vijay.webp",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/chetan-vijay-260b38a8/"
   },
   {
     name: "Vinuthna galagam",
     company: "6d technologies",
     designation: "Artificial Intelligence",
     image: "/mentors/Vinuthna galagam.webp",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/vinuthna-galagam-a700b3226/"
   },
   {
     name: "Mrinmoy Pal",
     company: "Infosys Ltd",
     designation: "Full Stack Web Development",
     image: "/mentors/Mrinmoy Pal.webp",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/mrinmoy32/"
   },
   {
     name: "Prakash kumar",
     company: "CGI",
     designation: "Sr. Software Engineer",
     image: "/mentors/Prakash kumar.webp",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/prakash-kumar-3a1493231/"
   },
   {
     name: "Abhishek Saurabh",
@@ -115,6 +115,13 @@ const teamMembers = [
     designation: "Finance",
     image: "/mentors/meghaShetty.webp",
     linkedin: "https://www.linkedin.com/in/megha-shetty-206b89175/"
+  },
+  {
+    name: "Varsha Kumari",
+    company: "Hypermine",
+    designation: "Associate Developer",
+    image: "/mentors/Varsha Kumari.jpeg",
+    linkedin: "https://www.linkedin.com/in/varsha-kumari-099887189/"
   }
 ];
 

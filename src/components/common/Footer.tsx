@@ -165,9 +165,80 @@ export default function Footer() {
 
   return (
     <footer className="text-white" style={{ backgroundColor: '#1b0905' }}>
-      {/* Top Section */}
+      {/* Top Section: Course Categories */}
       <div className="px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px] py-8 md:py-12">
         <div className="max-w-[1600px] mx-auto">
+          {/* Course Categories Section */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8 mb-8">
+            {mainCategories.map(([categoryName, courses]) => (
+              <div key={categoryName}>
+                <h4 className="text-base font-bold mb-3 border-b border-gray-700 pb-2 whitespace-nowrap">{categoryName}</h4>
+                <ul className="space-y-2">
+                  {/* Special handling for Computer Science / IT */}
+                  {categoryName === 'Computer Science / IT' ? (
+                    <>
+                      {displayedCSCourses.map((course, index) => (
+                        <li key={index}>
+                          <a 
+                            href={getCourseLink(course)} 
+                            className="text-sm text-gray-300 hover:text-brand-cyan transition-colors"
+                          >
+                            {course}
+                          </a>
+                        </li>
+                      ))}
+                      {csCourses.length > INITIAL_CS_COURSES && (
+                        <li>
+                          <button
+                            onClick={() => setIsCSExpanded(!isCSExpanded)}
+                            className="text-sm text-brand-orange hover:text-brand-cyan transition-colors font-medium"
+                          >
+                            {isCSExpanded ? 'View Less' : 'View More'}
+                          </button>
+                        </li>
+                      )}
+                    </>
+                  ) : (
+                    // Regular rendering for other categories
+                    courses.map((course, index) => (
+                      <li key={index}>
+                        <a 
+                          href={getCourseLink(course)} 
+                          className="text-sm text-gray-300 hover:text-brand-cyan transition-colors"
+                        >
+                          {course}
+                        </a>
+                      </li>
+                    ))
+                  )}
+                </ul>
+              </div>
+            ))}
+            
+            {/* Advanced Courses Column */}
+            {coursesByCategory['Advanced'] && (
+              <div>
+                <h4 className="text-base font-bold mb-3 border-b border-gray-700 pb-2 whitespace-nowrap">Advanced Courses</h4>
+                <ul className="space-y-2">
+                  {coursesByCategory['Advanced'].map((course, index) => (
+                    <li key={index}>
+                      <a 
+                        href={getCourseLink(course)} 
+                        className="text-sm text-gray-300 hover:text-brand-cyan transition-colors"
+                      >
+                        {course}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {/* Horizontal Line Below Course Categories */}
+          <div className="border-t border-gray-700 my-8"></div>
+
+          {/* Brand, Useful Links, Support, Address Section */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 mb-12">
             {/* Left Column: Brand */}
             <div className="space-y-6 sm:col-span-2 lg:col-span-1">
@@ -250,7 +321,7 @@ export default function Footer() {
                   else if (link === "Careers") href = "/careers";
                   else if (link === "Privacy Policy") href = "/privacy-policy";
                   else if (link === "Terms & Conditions") href = "/terms-and-conditions";
-                  else if (link === "Refund Policy" || link === "Refund policy") href = "/return-policy";
+                  else if (link === "Refund Policy" || link === "Refund policy") href = "/refund-policy";
 
                   return (
                     <li key={index}>
@@ -325,79 +396,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
-          {/* Horizontal Line Below Top Section */}
-          <div className="border-t border-gray-700 mt-12 mb-8"></div>
-
-          {/* Middle Section: Course Categories */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8 mb-8">
-            {mainCategories.map(([categoryName, courses]) => (
-              <div key={categoryName}>
-                <h4 className="text-base font-bold mb-3 border-b border-gray-700 pb-2 whitespace-nowrap">{categoryName}</h4>
-                <ul className="space-y-2">
-                  {/* Special handling for Computer Science / IT */}
-                  {categoryName === 'Computer Science / IT' ? (
-                    <>
-                      {displayedCSCourses.map((course, index) => (
-                        <li key={index}>
-                          <a 
-                            href={getCourseLink(course)} 
-                            className="text-sm text-gray-300 hover:text-brand-cyan transition-colors"
-                          >
-                            {course}
-                          </a>
-                        </li>
-                      ))}
-                      {csCourses.length > INITIAL_CS_COURSES && (
-                        <li>
-                          <button
-                            onClick={() => setIsCSExpanded(!isCSExpanded)}
-                            className="text-sm text-brand-orange hover:text-brand-cyan transition-colors font-medium"
-                          >
-                            {isCSExpanded ? 'View Less' : 'View More'}
-                          </button>
-                        </li>
-                      )}
-                    </>
-                  ) : (
-                    // Regular rendering for other categories
-                    courses.map((course, index) => (
-                      <li key={index}>
-                        <a 
-                          href={getCourseLink(course)} 
-                          className="text-sm text-gray-300 hover:text-brand-cyan transition-colors"
-                        >
-                          {course}
-                        </a>
-                      </li>
-                    ))
-                  )}
-                </ul>
-              </div>
-            ))}
-            
-            {/* Advanced Courses Column */}
-            {coursesByCategory['Advanced'] && (
-              <div>
-                <h4 className="text-base font-bold mb-3 border-b border-gray-700 pb-2 whitespace-nowrap">Advanced Courses</h4>
-                <ul className="space-y-2">
-                  {coursesByCategory['Advanced'].map((course, index) => (
-                    <li key={index}>
-                      <a 
-                        href={getCourseLink(course)} 
-                        className="text-sm text-gray-300 hover:text-brand-cyan transition-colors"
-                      >
-                        {course}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-
-          {/* Horizontal Line Between Middle and Bottom Section */}
-          <div className="border-t border-gray-700 my-8"></div>
         </div>
       </div>
 
@@ -405,15 +403,8 @@ export default function Footer() {
       <div className="py-6" style={{ backgroundColor: '#1b0905' }}>
         <div className="px-4 sm:px-6 md:px-12 lg:px-16 xl:pl-[145px] xl:pr-[145px]">
           <div className="max-w-[1600px] mx-auto">
-            {/* Copyright Bar - Dark Gray with Rounded Corners */}
-            <div className="rounded-lg px-6 py-4 mb-4" style={{ backgroundColor: '#2b2929' }}>
-              <p className="text-sm text-white text-center">
-                © 2026 InternsForge Edutech LLP. All rights reserved - v1.16.3
-              </p>
-            </div>
-            
             {/* Payment Information */}
-            <div className="flex flex-col items-center justify-center gap-4">
+            <div className="flex flex-col items-center justify-center gap-4 mb-6">
               <p className="text-base sm:text-lg md:text-[19.5px] text-white italic text-center">100% Safe and Secure Payments with</p>
               <div className="flex flex-wrap gap-2 sm:gap-3 items-center justify-center w-full">
                 {/* Razorpay Logo */}
@@ -483,6 +474,13 @@ export default function Footer() {
                   />
                 </div>
               </div>
+            </div>
+
+            {/* Copyright Bar - Dark Gray with Rounded Corners */}
+            <div className="rounded-lg px-6 py-4" style={{ backgroundColor: '#2b2929' }}>
+              <p className="text-sm text-white text-center">
+                © 2026 InternsForge Edutech LLP. All rights reserved - v1.16.3
+              </p>
             </div>
           </div>
         </div>
